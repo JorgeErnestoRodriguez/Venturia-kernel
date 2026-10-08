@@ -11,6 +11,13 @@ export interface DatosConfig {
   temporada: { semanas: number; calificacionInicial: number };
   propuestasDeValor: Record<PropuestaValor, {
     qBase: number; factorCostoVariable: number; factorPrecioReferencia: number;
+    /** Opcionales (por defecto 1): efectos propios de cada propuesta. */
+    factorFrecuencia?: number;
+    factorCostoCapacidad?: number;
+    factorCostoCliente?: number;
+    factorCastigoSaturacion?: number;
+    factorAbandonoMalServicio?: number;
+    umbralSaturacion?: number;
   }>;
   marketing: { eficiencia: MapaNiveles };
   calificacion: {
@@ -74,28 +81,28 @@ export function resolverParametros(
 
     precioReferencia: aCentimos(seg.precioReferencia * pv.factorPrecioReferencia),
     costoVariable: aCentimos(seg.costoVariablePorPedido * pv.factorCostoVariable),
-    costoCapacidad: aCentimos(seg.costoCapacidadPorUnidad),
+    costoCapacidad: aCentimos(seg.costoCapacidadPorUnidad * (pv.factorCostoCapacidad ?? 1)),
     rentaSemanal: aCentimos(plantilla.costos.rentaSemanal),
 
     mercadoPotencial: seg.mercadoPotencial,
     sensibilidadPrecio: seg.sensibilidadPrecio,
-    frecuenciaCompra: seg.frecuenciaCompra,
+    frecuenciaCompra: seg.frecuenciaCompra * (pv.factorFrecuencia ?? 1),
 
     costoMarketing,
     eficienciaMarketing: { ...config.marketing.eficiencia },
-    costoPorClienteNuevo: aCentimos(plantilla.marketing.costoPorClienteNuevo),
+    costoPorClienteNuevo: aCentimos(plantilla.marketing.costoPorClienteNuevo * (pv.factorCostoCliente ?? 1)),
 
     tasaRecomendacion: plantilla.clientes.tasaRecomendacion,
     abandonoBase: plantilla.clientes.abandonoBase,
-    abandonoMalServicio: config.clientes.a1MalServicio,
+    abandonoMalServicio: config.clientes.a1MalServicio * (pv.factorAbandonoMalServicio ?? 1),
     abandonoPrecio: config.clientes.a2PrecioSobreReferencia,
 
     qBase: pv.qBase,
     lambda: config.calificacion.lambda,
     b1Rechazos: config.calificacion.b1Rechazos,
     b2Precio: config.calificacion.b2PrecioSobreReferencia,
-    b3Saturacion: config.calificacion.b3Saturacion,
-    umbralSaturacion: config.calificacion.umbralSaturacion,
+    b3Saturacion: config.calificacion.b3Saturacion * (pv.factorCastigoSaturacion ?? 1),
+    umbralSaturacion: pv.umbralSaturacion ?? config.calificacion.umbralSaturacion,
 
     ruidoMin: config.demanda.ruidoMin,
     ruidoMax: config.demanda.ruidoMax,
