@@ -9,15 +9,13 @@
   },
   "_fuentes": "Precios de referencia fijados por el diseñador (Jorge). Fuente secundaria: arepa de puesto 1–3 USD, Caracas 2025–2026.",
   "inicio": {
-    "capital": 300,
-    "clientes": 150
+    "capital": 750,
+    "clientes": 150,
+    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial"
   },
   "costos": {
-    "costoVariablePorPedido": 0.6,
-    "_cv": "Harina, relleno, envase, gas por arepa",
-    "costoCapacidadPorUnidad": 0.3,
-    "_ck": "Mano de obra por arepa de capacidad diaria, se use o no",
-    "rentaSemanal": 60
+    "rentaSemanal": 200,
+    "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
   },
   "segmentos": [
     {
@@ -26,7 +24,10 @@
       "precioReferencia": 2.0,
       "mercadoPotencial": 3000,
       "sensibilidadPrecio": 1.8,
-      "frecuenciaCompra": 0.45
+      "frecuenciaCompra": 0.45,
+      "costoVariablePorPedido": 0.6,
+      "costoCapacidadPorUnidad": 0.3,
+      "_costos": "Harina, relleno sencillo, envase y gas"
     },
     {
       "id": "oficinistas",
@@ -34,7 +35,10 @@
       "precioReferencia": 4.0,
       "mercadoPotencial": 800,
       "sensibilidadPrecio": 1.0,
-      "frecuenciaCompra": 0.3
+      "frecuenciaCompra": 0.3,
+      "costoVariablePorPedido": 1.4,
+      "costoCapacidadPorUnidad": 0.4,
+      "_costos": "Relleno elaborado (carne, queso de año), envase y gas; preparación más lenta"
     }
   ],
   "marketing": {
