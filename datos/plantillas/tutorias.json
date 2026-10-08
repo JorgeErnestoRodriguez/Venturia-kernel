@@ -1,0 +1,61 @@
+{
+  "id": "tutorias",
+  "version": "0.1.0",
+  "nombre": "App de tutorías",
+  "producto": {
+    "singular": "sesión",
+    "plural": "sesiones",
+    "genero": "f"
+  },
+  "_fuentes": "Precios de referencia fijados por el diseñador (Jorge).",
+  "inicio": {
+    "capital": 300,
+    "clientes": 40
+  },
+  "costos": {
+    "costoVariablePorPedido": 1.0,
+    "_cv": "Comisión de cobro y plataforma de videollamada por sesión",
+    "costoCapacidadPorUnidad": 4.0,
+    "_ck": "Pago al tutor por hora disponible, se use o no",
+    "rentaSemanal": 30
+  },
+  "segmentos": [
+    {
+      "id": "primaria",
+      "nombre": "Primaria (pagan los padres)",
+      "precioReferencia": 8.0,
+      "mercadoPotencial": 500,
+      "sensibilidadPrecio": 1.2,
+      "frecuenciaCompra": 0.35
+    },
+    {
+      "id": "preuniversitario",
+      "nombre": "Preuniversitario",
+      "precioReferencia": 12.0,
+      "mercadoPotencial": 200,
+      "sensibilidadPrecio": 0.8,
+      "frecuenciaCompra": 0.2
+    }
+  ],
+  "marketing": {
+    "costoDiario": {
+      "0": 0,
+      "bajo": 8,
+      "medio": 20,
+      "alto": 45
+    },
+    "costoPorClienteNuevo": 8.0
+  },
+  "clientes": {
+    "tasaRecomendacion": 0.01,
+    "abandonoBase": 0.008
+  },
+  "factores": {
+    "clima": {
+      "soleado": 1.0,
+      "nublado": 1.0,
+      "lluvia": 1.05
+    },
+    "sabado": 0.6
+  }
+}

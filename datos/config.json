@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0",
+  "_nota": "Parámetros globales, comunes a todas las plantillas. Valores iniciales por calibrar.",
+  "temporada": {
+    "semanas": 4,
+    "diasPorSemanaSinSabado": 5,
+    "calificacionInicial": 3.0
+  },
+  "propuestasDeValor": {
+    "precio":  { "qBase": 3.2, "factorCostoVariable": 0.90, "factorPrecioReferencia": 0.95 },
+    "rapidez": { "qBase": 3.6, "factorCostoVariable": 1.00, "factorPrecioReferencia": 1.00 },
+    "calidad": { "qBase": 4.0, "factorCostoVariable": 1.15, "factorPrecioReferencia": 1.10 }
+  },
+  "marketing": {
+    "_nota": "Eficiencia (η) por nivel; el costo diario de cada nivel lo define cada plantilla.",
+    "eficiencia": { "0": 0, "bajo": 1.0, "medio": 0.8, "alto": 0.6 }
+  },
+  "calificacion": {
+    "lambda": 0.2,
+    "b1Rechazos": 3.0,
+    "b2PrecioSobreReferencia": 1.5,
+    "b3Saturacion": 2.0,
+    "umbralSaturacion": 0.9
+  },
+  "clientes": {
+    "a1MalServicio": 0.30,
+    "a2PrecioSobreReferencia": 0.05
+  },
+  "demanda": {
+    "ruidoMin": 0.90,
+    "ruidoMax": 1.10
+  },
+  "clima": {
+    "probabilidad": { "soleado": 0.5, "nublado": 0.3, "lluvia": 0.2 }
+  },
+  "plan": {
+    "precioMinFactor": 0.5,
+    "precioMaxFactor": 1.5
+  },
+  "cartera": {
+    "diasValoracion": 7
+  }
+}
