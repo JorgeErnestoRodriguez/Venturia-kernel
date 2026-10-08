@@ -1,0 +1,19 @@
+{
+  "name": "venturia-kernel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Motor de simulación y simulador de balance del kernel de Venturia",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"pruebas/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "balance": "node balance/ejecutar.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.0"
+  }
+}
