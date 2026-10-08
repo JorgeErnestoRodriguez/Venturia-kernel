@@ -1,0 +1,65 @@
+{
+  "id": "tutorias",
+  "version": "0.1.0",
+  "nombre": "App de tutorías",
+  "producto": {
+    "singular": "sesión",
+    "plural": "sesiones",
+    "genero": "f"
+  },
+  "_fuentes": "Precios de referencia fijados por el diseñador (Jorge).",
+  "inicio": {
+    "capital": 900,
+    "clientes": 40,
+    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial"
+  },
+  "costos": {
+    "rentaSemanal": 80,
+    "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
+  },
+  "segmentos": [
+    {
+      "id": "primaria",
+      "nombre": "Primaria (pagan los padres)",
+      "precioReferencia": 8.0,
+      "mercadoPotencial": 500,
+      "sensibilidadPrecio": 1.2,
+      "frecuenciaCompra": 0.35,
+      "costoVariablePorPedido": 1.0,
+      "costoCapacidadPorUnidad": 4.0,
+      "_costos": "Comisión de cobro y videollamada; tutor de nivel básico"
+    },
+    {
+      "id": "preuniversitario",
+      "nombre": "Preuniversitario",
+      "precioReferencia": 12.0,
+      "mercadoPotencial": 200,
+      "sensibilidadPrecio": 0.8,
+      "frecuenciaCompra": 0.2,
+      "costoVariablePorPedido": 1.0,
+      "costoCapacidadPorUnidad": 6.0,
+      "_costos": "Comisión de cobro y videollamada; tutor especializado, mejor pagado"
+    }
+  ],
+  "marketing": {
+    "costoDiario": {
+      "0": 0,
+      "bajo": 8,
+      "medio": 20,
+      "alto": 45
+    },
+    "costoPorClienteNuevo": 8.0
+  },
+  "clientes": {
+    "tasaRecomendacion": 0.01,
+    "abandonoBase": 0.008
+  },
+  "factores": {
+    "clima": {
+      "soleado": 1.0,
+      "nublado": 1.0,
+      "lluvia": 1.05
+    },
+    "sabado": 0.6
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "arepas",
+  "version": "0.1.0",
+  "nombre": "Venta de arepas",
+  "producto": {
+    "singular": "arepa",
+    "plural": "arepas",
+    "genero": "f"
+  },
+  "_fuentes": "Precios de referencia fijados por el diseñador (Jorge). Fuente secundaria: arepa de puesto 1–3 USD, Caracas 2025–2026.",
+  "inicio": {
+    "capital": 750,
+    "clientes": 150,
+    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial"
+  },
+  "costos": {
+    "rentaSemanal": 200,
+    "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
+  },
+  "segmentos": [
+    {
+      "id": "estudiantes",
+      "nombre": "Estudiantes",
+      "precioReferencia": 2.0,
+      "mercadoPotencial": 3000,
+      "sensibilidadPrecio": 1.8,
+      "frecuenciaCompra": 0.45,
+      "costoVariablePorPedido": 0.6,
+      "costoCapacidadPorUnidad": 0.3,
+      "_costos": "Harina, relleno sencillo, envase y gas"
+    },
+    {
+      "id": "oficinistas",
+      "nombre": "Oficinistas",
+      "precioReferencia": 4.0,
+      "mercadoPotencial": 800,
+      "sensibilidadPrecio": 1.0,
+      "frecuenciaCompra": 0.3,
+      "costoVariablePorPedido": 1.4,
+      "costoCapacidadPorUnidad": 0.4,
+      "_costos": "Relleno elaborado (carne, queso de año), envase y gas; preparación más lenta"
+    }
+  ],
+  "marketing": {
+    "costoDiario": {
+      "0": 0,
+      "bajo": 8,
+      "medio": 20,
+      "alto": 45
+    },
+    "costoPorClienteNuevo": 3.0
+  },
+  "clientes": {
+    "tasaRecomendacion": 0.02,
+    "abandonoBase": 0.01
+  },
+  "factores": {
+    "clima": {
+      "soleado": 1.0,
+      "nublado": 0.95,
+      "lluvia": 0.7
+    },
+    "sabado": 1.3
+  }
+}
