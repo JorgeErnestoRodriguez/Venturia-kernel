@@ -15,7 +15,7 @@ La especificación vive en el documento *Venturia — Requerimientos del kernel*
 ## Convenciones de datos
 
 - **Moneda.** 1 Ventus (V) ≈ 1 USD de referencia. En los JSON los montos se escriben en V con hasta 2 decimales; el motor los convierte a céntimos enteros al cargarlos.
-- **Tasas y multiplicadores** se escriben como decimales; el motor los convierte a enteros en milésimas.
+- **Tasas y multiplicadores** se escriben como decimales y el motor los usa como constantes; solo el estado (dinero, clientes, calificación) se guarda en enteros.
 - **Valores iniciales.** Son puntos de partida para calibrar, no valores balanceados. La meta de patrimonio no se fija a mano: se deriva de la simulación (la que alcanza entre el 60% y el 70% del bot prudente).
 
 ## Uso
