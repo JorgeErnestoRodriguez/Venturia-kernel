@@ -1,6 +1,6 @@
 {
   "id": "arepas",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "nombre": "Venta de arepas",
   "producto": {
     "singular": "arepa",
@@ -15,7 +15,7 @@
   },
   "costos": {
     "rentaSemanal": 200,
-    "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
+    "_nota": "Costo variable (c_v) y de capacidad (c_k) por segmento. La capacidad es ≈ 2/3 del costo por pedido para que la capacidad ociosa tenga un costo real (experimento-capacidad)."
   },
   "segmentos": [
     {
@@ -25,9 +25,9 @@
       "mercadoPotencial": 3000,
       "sensibilidadPrecio": 1.8,
       "frecuenciaCompra": 0.45,
-      "costoVariablePorPedido": 0.6,
-      "costoCapacidadPorUnidad": 0.3,
-      "_costos": "Harina, relleno sencillo, envase y gas"
+      "costoVariablePorPedido": 0.3,
+      "costoCapacidadPorUnidad": 0.6,
+      "_costos": "Insumos 0,30 (harina, relleno sencillo, envase) + capacidad 0,60 (personal, budare, gas por arepa de capacidad diaria)"
     },
     {
       "id": "oficinistas",
@@ -36,9 +36,9 @@
       "mercadoPotencial": 800,
       "sensibilidadPrecio": 1.0,
       "frecuenciaCompra": 0.3,
-      "costoVariablePorPedido": 1.4,
-      "costoCapacidadPorUnidad": 0.4,
-      "_costos": "Relleno elaborado (carne, queso de año), envase y gas; preparación más lenta"
+      "costoVariablePorPedido": 0.6,
+      "costoCapacidadPorUnidad": 1.2,
+      "_costos": "Insumos 0,60 (relleno elaborado, envase) + capacidad 1,20 (personal, budare, gas; preparación más lenta)"
     }
   ],
   "marketing": {
