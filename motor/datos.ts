@@ -28,7 +28,7 @@ export interface DatosConfig {
   demanda: { ruidoMin: number; ruidoMax: number };
   clima: { probabilidad: Record<Clima, number> };
   plan: { precioMinFactor: number; precioMaxFactor: number };
-  cartera: { diasValoracion: number };
+  cartera: { diasValoracion: number; restarCostoCapacidad?: boolean };
 }
 
 export interface DatosSegmento {
@@ -113,6 +113,7 @@ export function resolverParametros(
     precioMinFactor: config.plan.precioMinFactor,
     precioMaxFactor: config.plan.precioMaxFactor,
     diasValoracionCartera: config.cartera.diasValoracion,
+    carteraRestaCapacidad: config.cartera.restarCostoCapacidad ?? false,
     semanas: config.temporada.semanas,
   };
 }

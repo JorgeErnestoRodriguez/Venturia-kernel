@@ -63,7 +63,8 @@ export function validarPlan(p: Parametros, plan: Plan): Plan {
 
 /** Valor de la cartera de clientes, en céntimos. Usa el precio de referencia, no el cobrado. */
 export function valorCartera(p: Parametros, clientesMil: number): number {
-  const margen = Math.max(0, p.precioReferencia - p.costoVariable) / 100;
+  const costoUnitario = p.costoVariable + (p.carteraRestaCapacidad ? p.costoCapacidad : 0);
+  const margen = Math.max(0, p.precioReferencia - costoUnitario) / 100;
   return redondear((clientesMil / 1000) * p.frecuenciaCompra * margen * p.diasValoracionCartera * 100);
 }
 

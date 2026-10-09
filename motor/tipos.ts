@@ -55,6 +55,8 @@ export interface Parametros {
   precioMinFactor: number;
   precioMaxFactor: number;
   diasValoracionCartera: number;
+  /** Si es true, el margen de la cartera también descuenta el costo de capacidad por pedido. */
+  carteraRestaCapacidad: boolean;
   semanas: number;
 }
 
