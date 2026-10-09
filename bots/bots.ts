@@ -34,11 +34,11 @@ function planBase(v: Vista, factorPrecio: number, factorCapacidad: number, marke
 export type FabricaBot = (semilla: string) => Bot;
 
 export const BOTS: Record<string, FabricaBot> = {
-  /** Precio de referencia, capacidad con 5% de holgura, marketing medio (el mejor nivel
-   *  constante según balance/experimento-cac.ts). Define la meta. */
+  /** Precio de referencia, capacidad con 20% de holgura y marketing medio: los mejores
+   *  niveles constantes según experimento-capacidad y experimento-cac. Define la meta. */
   prudente: () => ({
     nombre: 'prudente',
-    decidir: (v) => planBase(v, 1.0, 1.05, 'medio'),
+    decidir: (v) => planBase(v, 1.0, 1.2, 'medio'),
   }),
 
   /** Decisiones al azar dentro de rangos razonables. Debe llegar poco a la meta. */
@@ -54,13 +54,19 @@ export const BOTS: Record<string, FabricaBot> = {
   /** Igual que el prudente, pero con marketing alto. Detecta si el marketing máximo domina. */
   agresivo: () => ({
     nombre: 'agresivo',
-    decidir: (v) => planBase(v, 1.0, 1.05, 'alto'),
+    decidir: (v) => planBase(v, 1.0, 1.2, 'alto'),
   }),
 
-  /** Igual que el prudente, pero con 30% de capacidad de sobra. Detecta si sobredimensionar domina. */
+  /** Igual que el prudente, pero con 50% de capacidad de sobra. Detecta si sobredimensionar domina. */
   holgado: () => ({
     nombre: 'holgado',
-    decidir: (v) => planBase(v, 1.0, 1.3, 'medio'),
+    decidir: (v) => planBase(v, 1.0, 1.5, 'medio'),
+  }),
+
+  /** Igual que el prudente, pero con la capacidad justa. Detecta si ahorrar capacidad domina. */
+  ajustado: () => ({
+    nombre: 'ajustado',
+    decidir: (v) => planBase(v, 1.0, 1.0, 'medio'),
   }),
 
   /** Cobrar caro y no gastar en marketing. */
@@ -72,12 +78,12 @@ export const BOTS: Record<string, FabricaBot> = {
   /** Competir por precio: 20% por debajo de la referencia. */
   barato: () => ({
     nombre: 'barato',
-    decidir: (v) => planBase(v, 0.8, 1.05, 'medio'),
+    decidir: (v) => planBase(v, 0.8, 1.2, 'medio'),
   }),
 
   /** Marketing medio las 2 primeras semanas y nada después (exploit de fin de temporada). */
   cosechador: () => ({
     nombre: 'cosechador',
-    decidir: (v) => planBase(v, 1.0, 1.05, v.dia < 14 ? 'medio' : '0'),
+    decidir: (v) => planBase(v, 1.0, 1.2, v.dia < 14 ? 'medio' : '0'),
   }),
 };
