@@ -1,6 +1,6 @@
 {
   "id": "tutorias",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "nombre": "App de tutorías",
   "producto": {
     "singular": "sesión",
@@ -48,7 +48,8 @@
       "medio": 20,
       "alto": 45
     },
-    "costoPorClienteNuevo": 8.0
+    "costoPorClienteNuevo": 5.0,
+    "_cac": "5 V: con la cartera valorada por margen completo, el marketing medio es el mejor nivel; nada y alto rinden menos (experimento-cac)."
   },
   "clientes": {
     "tasaRecomendacion": 0.01,

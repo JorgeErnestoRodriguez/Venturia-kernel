@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.3.0",
   "_nota": "Parámetros globales, comunes a todas las plantillas. Valores iniciales por calibrar.",
   "temporada": {
     "semanas": 4,
@@ -68,6 +68,8 @@
     "precioMaxFactor": 1.5
   },
   "cartera": {
-    "diasValoracion": 7
+    "diasValoracion": 7,
+    "restarCostoCapacidad": true,
+    "_nota": "Un cliente vale el margen completo que deja por pedido (precio de referencia − costo variable − costo de capacidad) durante N días."
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "arepas",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "nombre": "Venta de arepas",
   "producto": {
     "singular": "arepa",
@@ -48,8 +48,8 @@
       "medio": 20,
       "alto": 45
     },
-    "costoPorClienteNuevo": 8.0,
-    "_cac": "8 V: punto en que el marketing alto deja de dominar (experimento-cac: agresivo 64% = prudente 64%). Con 3 V, un cliente valía más de lo que costaba conseguirlo."
+    "costoPorClienteNuevo": 4.0,
+    "_cac": "4 V: con la cartera valorada por margen completo, el marketing medio es el mejor nivel; nada y alto rinden menos (experimento-cac)."
   },
   "clientes": {
     "tasaRecomendacion": 0.02,

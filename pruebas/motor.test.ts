@@ -91,9 +91,10 @@ test('la calificación nunca sale de 1,00–5,00 y los clientes nunca superan el
   }
 });
 
-test('el valor de la cartera usa el precio de referencia, no el cobrado', () => {
+test('el valor de la cartera usa el precio de referencia y el margen completo', () => {
   const v = valorCartera(p, 100_000);
-  const esperado = Math.round(100 * p.frecuenciaCompra * ((p.precioReferencia - p.costoVariable) / 100) * p.diasValoracionCartera * 100);
+  const costo = p.costoVariable + (p.carteraRestaCapacidad ? p.costoCapacidad : 0);
+  const esperado = Math.round(100 * p.frecuenciaCompra * ((p.precioReferencia - costo) / 100) * p.diasValoracionCartera * 100);
   assert.equal(v, esperado);
 });
 
