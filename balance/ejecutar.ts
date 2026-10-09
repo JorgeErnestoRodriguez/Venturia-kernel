@@ -111,11 +111,16 @@ for (const pl of plantillas) {
   for (const [b, r] of Object.entries(pb)) {
     if (b !== BOT_META && r.llega > prud.llega + 0.05) alertas.push(`**${b}** supera al prudente (${pct(r.llega)} frente a ${pct(prud.llega)}): posible estrategia dominante.`);
   }
-  const tasasPrud = combos.map((c) => alcanza(filas.find((f) => f.combo === c && f.bot === BOT_META)!));
-  const [tMin, tMax] = [Math.min(...tasasPrud), Math.max(...tasasPrud)];
-  if (tMax - tMin > 0.3) {
-    const peor = combos[tasasPrud.indexOf(tMin)], mejor = combos[tasasPrud.indexOf(tMax)];
-    alertas.push(`Combinaciones desbalanceadas para el prudente: de ${pct(tMin)} (${peor}) a ${pct(tMax)} (${mejor}).`);
+  // Equilibrio entre las elecciones de fundación (segmento × propuesta), con la mejor elección de sábados.
+  // Se compara el patrimonio mediano, no el % que llega a la meta, que es muy sensible al umbral.
+  const elecciones = [...new Set(filas.map((f) => `${f.segmento} · ${f.propuesta}`))].map((e) => {
+    const meds = filas.filter((f) => f.bot === BOT_META && `${f.segmento} · ${f.propuesta}` === e).map((f) => mediana(f.patrimonios));
+    return { e, m: Math.max(...meds) };
+  });
+  const mMax = Math.max(...elecciones.map((x) => x.m)), mMin = Math.min(...elecciones.map((x) => x.m));
+  if (mMax / mMin > 1.1) {
+    const peor = elecciones.find((x) => x.m === mMin)!.e, mejor = elecciones.find((x) => x.m === mMax)!.e;
+    alertas.push(`Elecciones de fundación desbalanceadas: la mejor (${mejor}) rinde ${pct(mMax / mMin - 1)} más que la peor (${peor}).`);
   }
   if (prud.quiebra > 0.1) alertas.push(`El prudente quiebra en ${pct(prud.quiebra)} de las partidas.`);
   if (prud.quiebra === 0 && Object.values(pb).every((r) => r.quiebra < 0.02)) alertas.push('Casi nadie quiebra: la mecánica de fracaso no se activa.');
