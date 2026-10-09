@@ -1,6 +1,6 @@
 {
   "id": "tutorias",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "nombre": "App de tutorías",
   "producto": {
     "singular": "sesión",
@@ -10,8 +10,8 @@
   "_fuentes": "Precios de referencia fijados por el diseñador (Jorge).",
   "inicio": {
     "capital": 900,
-    "clientes": 40,
-    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial"
+    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial",
+    "_clientes": "Los clientes iniciales se definen por segmento (experimento-segmentos: igualan el patrimonio esperado entre segmentos)."
   },
   "costos": {
     "rentaSemanal": 80,
@@ -21,6 +21,7 @@
     {
       "id": "primaria",
       "nombre": "Primaria (pagan los padres)",
+      "clientesIniciales": 40,
       "precioReferencia": 8.0,
       "mercadoPotencial": 500,
       "sensibilidadPrecio": 1.2,
@@ -32,6 +33,7 @@
     {
       "id": "preuniversitario",
       "nombre": "Preuniversitario",
+      "clientesIniciales": 55,
       "precioReferencia": 12.0,
       "mercadoPotencial": 200,
       "sensibilidadPrecio": 0.8,
@@ -61,6 +63,8 @@
       "nublado": 1.0,
       "lluvia": 1.05
     },
-    "sabado": 0.6
+    "sabado": 0.6,
+    "costoCapacidadSabado": 1.5,
+    "_sabado": "Los sábados la capacidad cuesta ×1,5 (recargo de horas extra). Abrir conviene en arepas (+11%) y no en tutorías (−1%)."
   }
 }

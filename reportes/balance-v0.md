@@ -6,79 +6,79 @@ Alcance v0: economía base, sin imprevistos ni oportunidades; la temporada termi
 
 ## Venta de arepas
 
-**Meta derivada: 2.150 V** (capital inicial 750 V; multiplicador 2,87×).
+**Meta derivada: 1.850 V** (capital inicial 750 V; multiplicador 2,47×).
 
 ### Resultado por bot (todas las combinaciones)
 
 | Bot | Llega a la meta | Quiebra | Patrimonio mediano | P10 | P90 |
 | --- | --- | --- | --- | --- | --- |
-| prudente | 65% | 0% | 2.327 | 1.786 | 2.977 |
-| aleatorio | 0% | 10% | 759 | 272 | 1.387 |
-| agresivo | 56% | 0% | 2.222 | 1.646 | 2.916 |
-| holgado | 65% | 0% | 2.298 | 1.770 | 2.929 |
-| ajustado | 27% | 0% | 1.877 | 1.427 | 2.439 |
-| avaro | 4% | 0% | 1.423 | 1.039 | 2.044 |
-| barato | 24% | 0% | 1.926 | 1.555 | 2.337 |
-| cosechador | 62% | 0% | 2.287 | 1.781 | 2.900 |
+| prudente | 69% | 0% | 1.963 | 1.674 | 2.288 |
+| aleatorio | 0% | 15% | 604 | 239 | 975 |
+| agresivo | 52% | 0% | 1.860 | 1.533 | 2.228 |
+| holgado | 65% | 0% | 1.916 | 1.686 | 2.192 |
+| ajustado | 10% | 0% | 1.589 | 1.312 | 1.851 |
+| avaro | 0% | 0% | 1.221 | 1.012 | 1.451 |
+| barato | 14% | 0% | 1.584 | 1.319 | 1.894 |
+| cosechador | 63% | 0% | 1.923 | 1.655 | 2.225 |
 
 ### Llega a la meta, por combinación y bot
 
 | Combinación | prudente | aleatorio | agresivo | holgado | ajustado | avaro | barato | cosechador | Mejor bot |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| estudiantes · precio · sin sábados | 8% | 0% | 4% | 0% | 0% | 0% | 0% | 6% | prudente |
-| estudiantes · precio · con sábados | 59% | 0% | 45% | 86% | 1% | 0% | 20% | 55% | holgado |
-| estudiantes · rapidez · sin sábados | 0% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
-| estudiantes · rapidez · con sábados | 57% | 0% | 38% | 35% | 3% | 0% | 21% | 51% | prudente |
-| estudiantes · calidad · sin sábados | 14% | 0% | 8% | 0% | 0% | 0% | 1% | 12% | prudente |
-| estudiantes · calidad · con sábados | 73% | 0% | 57% | 96% | 3% | 0% | 32% | 67% | holgado |
-| oficinistas · precio · sin sábados | 87% | 0% | 75% | 98% | 25% | 3% | 11% | 84% | prudente |
-| oficinistas · precio · con sábados | 100% | 0% | 96% | 100% | 61% | 9% | 57% | 99% | holgado |
-| oficinistas · rapidez · sin sábados | 85% | 0% | 65% | 67% | 37% | 0% | 1% | 82% | prudente |
-| oficinistas · rapidez · con sábados | 100% | 0% | 99% | 100% | 91% | 13% | 59% | 100% | prudente |
-| oficinistas · calidad · sin sábados | 93% | 0% | 84% | 100% | 32% | 6% | 19% | 90% | prudente |
-| oficinistas · calidad · con sábados | 100% | 0% | 98% | 100% | 73% | 18% | 70% | 100% | holgado |
+| estudiantes · precio · sin sábados | 53% | 0% | 32% | 40% | 3% | 0% | 15% | 50% | prudente |
+| estudiantes · precio · con sábados | 79% | 0% | 60% | 95% | 7% | 0% | 29% | 78% | prudente |
+| estudiantes · rapidez · sin sábados | 32% | 0% | 12% | 0% | 4% | 0% | 6% | 31% | prudente |
+| estudiantes · rapidez · con sábados | 85% | 0% | 60% | 79% | 24% | 0% | 35% | 83% | prudente |
+| estudiantes · calidad · sin sábados | 65% | 0% | 43% | 78% | 5% | 0% | 22% | 63% | prudente |
+| estudiantes · calidad · con sábados | 88% | 0% | 71% | 99% | 12% | 0% | 42% | 86% | holgado |
+| oficinistas · precio · sin sábados | 55% | 0% | 40% | 37% | 3% | 0% | 0% | 44% | prudente |
+| oficinistas · precio · con sábados | 83% | 0% | 69% | 95% | 9% | 0% | 3% | 74% | prudente |
+| oficinistas · rapidez · sin sábados | 35% | 0% | 19% | 0% | 4% | 0% | 0% | 23% | prudente |
+| oficinistas · rapidez · con sábados | 88% | 0% | 73% | 78% | 27% | 0% | 1% | 79% | prudente |
+| oficinistas · calidad · sin sábados | 68% | 0% | 56% | 80% | 6% | 0% | 2% | 60% | prudente |
+| oficinistas · calidad · con sábados | 91% | 0% | 83% | 100% | 16% | 0% | 9% | 85% | holgado |
 
 ### Alertas
 
-- Combinaciones desbalanceadas para el prudente: de 0% (estudiantes · rapidez · sin sábados) a 100% (oficinistas · rapidez · con sábados).
+- Ninguna.
 
 ## App de tutorías
 
-**Meta derivada: 2.000 V** (capital inicial 900 V; multiplicador 2,22×).
+**Meta derivada: 2.050 V** (capital inicial 900 V; multiplicador 2,28×).
 
 ### Resultado por bot (todas las combinaciones)
 
 | Bot | Llega a la meta | Quiebra | Patrimonio mediano | P10 | P90 |
 | --- | --- | --- | --- | --- | --- |
-| prudente | 61% | 0% | 2.070 | 1.815 | 2.306 |
-| aleatorio | 0% | 0% | 929 | 661 | 1.172 |
-| agresivo | 57% | 0% | 2.107 | 1.733 | 2.447 |
-| holgado | 0% | 0% | 1.473 | 1.326 | 1.632 |
-| ajustado | 36% | 0% | 1.927 | 1.743 | 2.138 |
-| avaro | 0% | 0% | 1.623 | 1.545 | 1.711 |
-| barato | 0% | 0% | 1.334 | 1.208 | 1.464 |
-| cosechador | 36% | 0% | 1.921 | 1.749 | 2.103 |
+| prudente | 77% | 0% | 2.092 | 2.021 | 2.287 |
+| aleatorio | 0% | 1% | 927 | 593 | 1.249 |
+| agresivo | 62% | 0% | 2.120 | 1.868 | 2.358 |
+| holgado | 0% | 0% | 1.465 | 1.288 | 1.624 |
+| ajustado | 45% | 0% | 2.038 | 1.893 | 2.156 |
+| avaro | 10% | 0% | 1.767 | 1.553 | 2.053 |
+| barato | 0% | 0% | 1.314 | 1.115 | 1.474 |
+| cosechador | 32% | 0% | 1.992 | 1.868 | 2.186 |
 
 ### Llega a la meta, por combinación y bot
 
 | Combinación | prudente | aleatorio | agresivo | holgado | ajustado | avaro | barato | cosechador | Mejor bot |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| primaria · precio · sin sábados | 100% | 0% | 100% | 0% | 17% | 0% | 0% | 0% | agresivo |
-| primaria · precio · con sábados | 100% | 0% | 100% | 0% | 54% | 0% | 0% | 71% | agresivo |
-| primaria · rapidez · sin sábados | 98% | 0% | 100% | 0% | 78% | 0% | 0% | 0% | agresivo |
-| primaria · rapidez · con sábados | 100% | 0% | 100% | 0% | 100% | 0% | 0% | 88% | agresivo |
-| primaria · calidad · sin sábados | 100% | 0% | 100% | 0% | 76% | 0% | 0% | 98% | agresivo |
-| primaria · calidad · con sábados | 100% | 0% | 100% | 0% | 96% | 0% | 0% | 100% | agresivo |
-| preuniversitario · precio · sin sábados | 0% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
-| preuniversitario · precio · con sábados | 7% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
-| preuniversitario · rapidez · sin sábados | 0% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | ajustado |
-| preuniversitario · rapidez · con sábados | 0% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
-| preuniversitario · calidad · sin sábados | 30% | 0% | 5% | 0% | 0% | 0% | 0% | 0% | prudente |
-| preuniversitario · calidad · con sábados | 100% | 0% | 77% | 0% | 5% | 0% | 0% | 72% | prudente |
+| primaria · precio · sin sábados | 92% | 0% | 100% | 0% | 3% | 0% | 0% | 0% | agresivo |
+| primaria · precio · con sábados | 52% | 0% | 73% | 0% | 0% | 0% | 0% | 0% | agresivo |
+| primaria · rapidez · sin sábados | 64% | 0% | 100% | 0% | 40% | 0% | 0% | 0% | agresivo |
+| primaria · rapidez · con sábados | 76% | 0% | 94% | 0% | 32% | 0% | 0% | 0% | agresivo |
+| primaria · calidad · sin sábados | 100% | 0% | 100% | 0% | 53% | 0% | 0% | 79% | agresivo |
+| primaria · calidad · con sábados | 100% | 0% | 100% | 0% | 25% | 0% | 0% | 30% | agresivo |
+| preuniversitario · precio · sin sábados | 98% | 0% | 2% | 0% | 43% | 7% | 0% | 65% | prudente |
+| preuniversitario · precio · con sábados | 40% | 0% | 0% | 0% | 14% | 7% | 0% | 0% | prudente |
+| preuniversitario · rapidez · sin sábados | 69% | 0% | 0% | 0% | 86% | 5% | 0% | 6% | ajustado |
+| preuniversitario · rapidez · con sábados | 28% | 0% | 0% | 0% | 77% | 4% | 0% | 0% | ajustado |
+| preuniversitario · calidad · sin sábados | 100% | 0% | 100% | 0% | 90% | 51% | 0% | 100% | prudente |
+| preuniversitario · calidad · con sábados | 100% | 0% | 81% | 0% | 76% | 51% | 0% | 99% | prudente |
 
 ### Alertas
 
-- Combinaciones desbalanceadas para el prudente: de 0% (preuniversitario · precio · sin sábados) a 100% (primaria · precio · con sábados).
+- Elecciones de fundación desbalanceadas: la mejor (preuniversitario · calidad) rinde 11% más que la peor (preuniversitario · rapidez).
 - Casi nadie quiebra: la mecánica de fracaso no se activa.
 
 ---
