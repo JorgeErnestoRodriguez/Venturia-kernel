@@ -6,41 +6,39 @@ Alcance v0: economía base, sin imprevistos ni oportunidades; la temporada termi
 
 ## Venta de arepas
 
-**Meta derivada: 2.200 V** (capital inicial 750 V; multiplicador 2,93×).
+**Meta derivada: 1.950 V** (capital inicial 750 V; multiplicador 2,60×).
 
 ### Resultado por bot (todas las combinaciones)
 
 | Bot | Llega a la meta | Quiebra | Patrimonio mediano | P10 | P90 |
 | --- | --- | --- | --- | --- | --- |
-| prudente | 65% | 0% | 2.375 | 1.887 | 2.994 |
-| aleatorio | 2% | 1% | 1.179 | 625 | 1.884 |
-| agresivo | 99% | 0% | 3.201 | 2.500 | 4.052 |
-| avaro | 8% | 0% | 1.538 | 1.145 | 2.176 |
-| barato | 49% | 0% | 2.190 | 1.805 | 2.598 |
-| cosechador | 68% | 0% | 2.421 | 1.909 | 3.055 |
+| prudente | 63% | 0% | 2.091 | 1.648 | 2.668 |
+| aleatorio | 0% | 3% | 879 | 386 | 1.516 |
+| agresivo | 64% | 0% | 2.144 | 1.583 | 2.817 |
+| avaro | 28% | 0% | 1.538 | 1.145 | 2.176 |
+| barato | 44% | 0% | 1.912 | 1.562 | 2.285 |
+| cosechador | 62% | 0% | 2.081 | 1.630 | 2.666 |
 
 ### Llega a la meta, por combinación y bot
 
 | Combinación | prudente | aleatorio | agresivo | avaro | barato | cosechador | Mejor bot |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| estudiantes · precio · sin sábados | 16% | 0% | 98% | 0% | 14% | 22% | agresivo |
-| estudiantes · precio · con sábados | 58% | 0% | 100% | 0% | 54% | 64% | agresivo |
-| estudiantes · rapidez · sin sábados | 7% | 0% | 89% | 0% | 3% | 12% | agresivo |
-| estudiantes · rapidez · con sábados | 66% | 0% | 100% | 0% | 60% | 76% | agresivo |
-| estudiantes · calidad · sin sábados | 12% | 0% | 97% | 0% | 7% | 15% | agresivo |
-| estudiantes · calidad · con sábados | 52% | 0% | 100% | 0% | 41% | 57% | agresivo |
-| oficinistas · precio · sin sábados | 91% | 1% | 100% | 8% | 63% | 92% | agresivo |
-| oficinistas · precio · con sábados | 99% | 4% | 100% | 29% | 90% | 99% | agresivo |
-| oficinistas · rapidez · sin sábados | 93% | 1% | 100% | 2% | 38% | 94% | agresivo |
-| oficinistas · rapidez · con sábados | 100% | 10% | 100% | 25% | 93% | 100% | agresivo |
-| oficinistas · calidad · sin sábados | 86% | 1% | 100% | 7% | 38% | 87% | agresivo |
-| oficinistas · calidad · con sábados | 97% | 4% | 100% | 26% | 82% | 98% | agresivo |
+| estudiantes · precio · sin sábados | 14% | 0% | 13% | 0% | 12% | 14% | agresivo |
+| estudiantes · precio · con sábados | 52% | 0% | 74% | 0% | 43% | 49% | agresivo |
+| estudiantes · rapidez · sin sábados | 6% | 0% | 0% | 0% | 1% | 6% | prudente |
+| estudiantes · rapidez · con sábados | 56% | 0% | 24% | 0% | 45% | 54% | prudente |
+| estudiantes · calidad · sin sábados | 11% | 0% | 7% | 0% | 5% | 11% | prudente |
+| estudiantes · calidad · con sábados | 47% | 0% | 68% | 0% | 29% | 45% | agresivo |
+| oficinistas · precio · sin sábados | 92% | 1% | 99% | 46% | 64% | 91% | agresivo |
+| oficinistas · precio · con sábados | 98% | 1% | 100% | 70% | 87% | 98% | agresivo |
+| oficinistas · rapidez · sin sábados | 94% | 0% | 90% | 36% | 41% | 93% | prudente |
+| oficinistas · rapidez · con sábados | 100% | 2% | 100% | 79% | 89% | 100% | prudente |
+| oficinistas · calidad · sin sábados | 88% | 1% | 97% | 39% | 40% | 86% | agresivo |
+| oficinistas · calidad · con sábados | 97% | 1% | 100% | 69% | 76% | 97% | agresivo |
 
 ### Alertas
 
-- **agresivo** supera al prudente (99% frente a 65%): posible estrategia dominante.
-- Combinaciones desbalanceadas para el prudente: de 7% (estudiantes · rapidez · sin sábados) a 100% (oficinistas · rapidez · con sábados).
-- Casi nadie quiebra: la mecánica de fracaso no se activa.
+- Combinaciones desbalanceadas para el prudente: de 6% (estudiantes · rapidez · sin sábados) a 100% (oficinistas · rapidez · con sábados).
 
 ## App de tutorías
 
@@ -80,4 +78,4 @@ Alcance v0: economía base, sin imprevistos ni oportunidades; la temporada termi
 - Casi nadie quiebra: la mecánica de fracaso no se activa.
 
 ---
-Tiempo de ejecución: 1,0 s.
+Tiempo de ejecución: 1,2 s.

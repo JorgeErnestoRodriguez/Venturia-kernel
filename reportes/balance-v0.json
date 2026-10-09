@@ -3,54 +3,54 @@
   "partidasPorCombinacion": 500,
   "plantillas": {
     "arepas": {
-      "meta": 2200,
+      "meta": 1950,
       "porBot": {
         "prudente": {
-          "llega": 0.6473333333333333,
+          "llega": 0.6306666666666667,
           "quiebra": 0,
-          "mediana": 2375.32
+          "mediana": 2090.67
         },
         "aleatorio": {
-          "llega": 0.017166666666666667,
-          "quiebra": 0.006833333333333334,
-          "mediana": 1179.01
+          "llega": 0.004666666666666667,
+          "quiebra": 0.026,
+          "mediana": 879.37
         },
         "agresivo": {
-          "llega": 0.9863333333333333,
+          "llega": 0.6431666666666667,
           "quiebra": 0,
-          "mediana": 3200.56
+          "mediana": 2143.62
         },
         "avaro": {
-          "llega": 0.0815,
+          "llega": 0.2825,
           "quiebra": 0,
           "mediana": 1537.71
         },
         "barato": {
-          "llega": 0.48633333333333334,
+          "llega": 0.4445,
           "quiebra": 0,
-          "mediana": 2189.59
+          "mediana": 1912.05
         },
         "cosechador": {
-          "llega": 0.679,
+          "llega": 0.6213333333333333,
           "quiebra": 0,
-          "mediana": 2420.59
+          "mediana": 2081.4
         }
       },
       "porCombo": {
         "estudiantes · precio · sin sábados": {
           "prudente": {
-            "llega": 0.156,
-            "mediana": 1986.49,
+            "llega": 0.144,
+            "mediana": 1753.02,
             "quiebra": 0
           },
           "aleatorio": {
             "llega": 0,
-            "mediana": 727.76,
-            "quiebra": 0.03
+            "mediana": 496.36,
+            "quiebra": 0.076
           },
           "agresivo": {
-            "llega": 0.984,
-            "mediana": 2715.17,
+            "llega": 0.126,
+            "mediana": 1755.9,
             "quiebra": 0
           },
           "avaro": {
@@ -59,30 +59,30 @@
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.144,
-            "mediana": 1942.68,
+            "llega": 0.124,
+            "mediana": 1686.95,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.216,
-            "mediana": 2016.79,
+            "llega": 0.142,
+            "mediana": 1738.19,
             "quiebra": 0
           }
         },
         "estudiantes · precio · con sábados": {
           "prudente": {
-            "llega": 0.58,
-            "mediana": 2251.65,
+            "llega": 0.52,
+            "mediana": 1959.36,
             "quiebra": 0
           },
           "aleatorio": {
             "llega": 0,
-            "mediana": 771.57,
-            "quiebra": 0.012
+            "mediana": 488.33,
+            "quiebra": 0.082
           },
           "agresivo": {
-            "llega": 1,
-            "mediana": 3336.87,
+            "llega": 0.742,
+            "mediana": 2100.52,
             "quiebra": 0
           },
           "avaro": {
@@ -91,30 +91,30 @@
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.542,
-            "mediana": 2223.72,
+            "llega": 0.426,
+            "mediana": 1903.98,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.64,
-            "mediana": 2292.54,
+            "llega": 0.494,
+            "mediana": 1945.26,
             "quiebra": 0
           }
         },
         "estudiantes · rapidez · sin sábados": {
           "prudente": {
-            "llega": 0.066,
-            "mediana": 1946.59,
+            "llega": 0.06,
+            "mediana": 1717.03,
             "quiebra": 0
           },
           "aleatorio": {
             "llega": 0,
-            "mediana": 943.27,
-            "quiebra": 0.002
+            "mediana": 697,
+            "quiebra": 0.018
           },
           "agresivo": {
-            "llega": 0.886,
-            "mediana": 2395.72,
+            "llega": 0,
+            "mediana": 1520.15,
             "quiebra": 0
           },
           "avaro": {
@@ -123,30 +123,30 @@
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.032,
-            "mediana": 1911.4,
+            "llega": 0.014,
+            "mediana": 1667.11,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.124,
-            "mediana": 1993.24,
+            "llega": 0.062,
+            "mediana": 1708.47,
             "quiebra": 0
           }
         },
         "estudiantes · rapidez · con sábados": {
           "prudente": {
-            "llega": 0.66,
-            "mediana": 2272.65,
+            "llega": 0.564,
+            "mediana": 1976,
             "quiebra": 0
           },
           "aleatorio": {
             "llega": 0,
-            "mediana": 1044.5,
-            "quiebra": 0
+            "mediana": 732.63,
+            "quiebra": 0.002
           },
           "agresivo": {
-            "llega": 1,
-            "mediana": 3017.73,
+            "llega": 0.236,
+            "mediana": 1851.5,
             "quiebra": 0
           },
           "avaro": {
@@ -155,30 +155,30 @@
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.602,
-            "mediana": 2247.93,
+            "llega": 0.452,
+            "mediana": 1934.02,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.756,
-            "mediana": 2329.83,
+            "llega": 0.544,
+            "mediana": 1969.23,
             "quiebra": 0
           }
         },
         "estudiantes · calidad · sin sábados": {
           "prudente": {
-            "llega": 0.118,
-            "mediana": 1940.96,
+            "llega": 0.114,
+            "mediana": 1713.61,
             "quiebra": 0
           },
           "aleatorio": {
             "llega": 0,
-            "mediana": 701.54,
-            "quiebra": 0.028
+            "mediana": 479.09,
+            "quiebra": 0.062
           },
           "agresivo": {
-            "llega": 0.966,
-            "mediana": 2645.12,
+            "llega": 0.072,
+            "mediana": 1710.32,
             "quiebra": 0
           },
           "avaro": {
@@ -187,30 +187,30 @@
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.072,
-            "mediana": 1861.18,
+            "llega": 0.054,
+            "mediana": 1618.49,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.152,
-            "mediana": 1963.55,
+            "llega": 0.112,
+            "mediana": 1698.63,
             "quiebra": 0
           }
         },
         "estudiantes · calidad · con sábados": {
           "prudente": {
-            "llega": 0.524,
-            "mediana": 2217.55,
+            "llega": 0.474,
+            "mediana": 1923.63,
             "quiebra": 0
           },
           "aleatorio": {
             "llega": 0,
-            "mediana": 755.86,
-            "quiebra": 0.01
+            "mediana": 476.48,
+            "quiebra": 0.072
           },
           "agresivo": {
-            "llega": 1,
-            "mediana": 3276.69,
+            "llega": 0.676,
+            "mediana": 2060.2,
             "quiebra": 0
           },
           "avaro": {
@@ -219,213 +219,211 @@
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.406,
-            "mediana": 2141.43,
+            "llega": 0.294,
+            "mediana": 1837.66,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.566,
-            "mediana": 2245.14,
+            "llega": 0.454,
+            "mediana": 1919.96,
             "quiebra": 0
           }
         },
         "oficinistas · precio · sin sábados": {
           "prudente": {
-            "llega": 0.91,
-            "mediana": 2580.98,
+            "llega": 0.918,
+            "mediana": 2314.07,
             "quiebra": 0
           },
           "aleatorio": {
-            "llega": 0.01,
-            "mediana": 1478.16,
+            "llega": 0.006,
+            "mediana": 1169.36,
             "quiebra": 0
           },
           "agresivo": {
-            "llega": 1,
-            "mediana": 3434.53,
+            "llega": 0.994,
+            "mediana": 2451.94,
             "quiebra": 0
           },
           "avaro": {
-            "llega": 0.082,
+            "llega": 0.458,
             "mediana": 1926.06,
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.63,
-            "mediana": 2275.3,
+            "llega": 0.636,
+            "mediana": 2017.22,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.916,
-            "mediana": 2607.45,
+            "llega": 0.91,
+            "mediana": 2307.87,
             "quiebra": 0
           }
         },
         "oficinistas · precio · con sábados": {
           "prudente": {
-            "llega": 0.988,
-            "mediana": 2918.5,
+            "llega": 0.982,
+            "mediana": 2592.58,
             "quiebra": 0
           },
           "aleatorio": {
-            "llega": 0.044,
-            "mediana": 1633.81,
+            "llega": 0.014,
+            "mediana": 1263.07,
             "quiebra": 0
           },
           "agresivo": {
             "llega": 1,
-            "mediana": 4176.35,
+            "mediana": 2896.85,
             "quiebra": 0
           },
           "avaro": {
-            "llega": 0.292,
+            "llega": 0.698,
             "mediana": 2093.57,
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.904,
-            "mediana": 2566,
+            "llega": 0.872,
+            "mediana": 2250.72,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.986,
-            "mediana": 2964.03,
+            "llega": 0.98,
+            "mediana": 2580.52,
             "quiebra": 0
           }
         },
         "oficinistas · rapidez · sin sábados": {
           "prudente": {
-            "llega": 0.932,
-            "mediana": 2494.13,
+            "llega": 0.942,
+            "mediana": 2242.94,
             "quiebra": 0
           },
           "aleatorio": {
-            "llega": 0.008,
-            "mediana": 1639.38,
+            "llega": 0.004,
+            "mediana": 1321.4,
             "quiebra": 0
           },
           "agresivo": {
-            "llega": 1,
-            "mediana": 3015.69,
+            "llega": 0.898,
+            "mediana": 2126.2,
             "quiebra": 0
           },
           "avaro": {
-            "llega": 0.024,
+            "llega": 0.362,
             "mediana": 1903.04,
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.382,
-            "mediana": 2156.5,
+            "llega": 0.408,
+            "mediana": 1920.67,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.944,
-            "mediana": 2542.83,
+            "llega": 0.928,
+            "mediana": 2234.53,
             "quiebra": 0
           }
         },
         "oficinistas · rapidez · con sábados": {
           "prudente": {
             "llega": 1,
-            "mediana": 2906.49,
+            "mediana": 2579.13,
             "quiebra": 0
           },
           "aleatorio": {
-            "llega": 0.1,
-            "mediana": 1861.16,
+            "llega": 0.018,
+            "mediana": 1464.33,
             "quiebra": 0
           },
           "agresivo": {
             "llega": 1,
-            "mediana": 3747.66,
+            "mediana": 2558.02,
             "quiebra": 0
           },
           "avaro": {
-            "llega": 0.254,
+            "llega": 0.79,
             "mediana": 2106.87,
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.926,
-            "mediana": 2491.2,
+            "llega": 0.892,
+            "mediana": 2186.29,
             "quiebra": 0
           },
           "cosechador": {
             "llega": 1,
-            "mediana": 2973.41,
+            "mediana": 2572.34,
             "quiebra": 0
           }
         },
         "oficinistas · calidad · sin sábados": {
           "prudente": {
-            "llega": 0.862,
-            "mediana": 2492.65,
+            "llega": 0.876,
+            "mediana": 2241.06,
             "quiebra": 0
           },
           "aleatorio": {
-            "llega": 0.008,
-            "mediana": 1415.21,
+            "llega": 0.006,
+            "mediana": 1124.9,
             "quiebra": 0
           },
           "agresivo": {
-            "llega": 1,
-            "mediana": 3299.21,
+            "llega": 0.974,
+            "mediana": 2351.41,
             "quiebra": 0
           },
           "avaro": {
-            "llega": 0.07,
+            "llega": 0.394,
             "mediana": 1905.24,
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.376,
-            "mediana": 2133.63,
+            "llega": 0.4,
+            "mediana": 1896.06,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.872,
-            "mediana": 2518.94,
+            "llega": 0.862,
+            "mediana": 2229.08,
             "quiebra": 0
           }
         },
         "oficinistas · calidad · con sábados": {
           "prudente": {
-            "llega": 0.972,
-            "mediana": 2857.47,
+            "llega": 0.974,
+            "mediana": 2526.12,
             "quiebra": 0
           },
           "aleatorio": {
-            "llega": 0.036,
-            "mediana": 1584.07,
+            "llega": 0.008,
+            "mediana": 1213.5,
             "quiebra": 0
           },
           "agresivo": {
             "llega": 1,
-            "mediana": 4051.7,
+            "mediana": 2810.53,
             "quiebra": 0
           },
           "avaro": {
-            "llega": 0.256,
+            "llega": 0.688,
             "mediana": 2075.04,
             "quiebra": 0
           },
           "barato": {
-            "llega": 0.82,
-            "mediana": 2424.63,
+            "llega": 0.762,
+            "mediana": 2125.33,
             "quiebra": 0
           },
           "cosechador": {
-            "llega": 0.976,
-            "mediana": 2889,
+            "llega": 0.968,
+            "mediana": 2518.66,
             "quiebra": 0
           }
         }
       },
       "alertas": [
-        "**agresivo** supera al prudente (99% frente a 65%): posible estrategia dominante.",
-        "Combinaciones desbalanceadas para el prudente: de 7% (estudiantes · rapidez · sin sábados) a 100% (oficinistas · rapidez · con sábados).",
-        "Casi nadie quiebra: la mecánica de fracaso no se activa."
+        "Combinaciones desbalanceadas para el prudente: de 6% (estudiantes · rapidez · sin sábados) a 100% (oficinistas · rapidez · con sábados)."
       ]
     },
     "tutorias": {
