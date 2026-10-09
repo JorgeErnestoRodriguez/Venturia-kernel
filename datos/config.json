@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "_nota": "Parámetros globales, comunes a todas las plantillas. Valores iniciales por calibrar.",
   "temporada": {
     "semanas": 4,
@@ -7,13 +7,39 @@
     "calificacionInicial": 3.0
   },
   "propuestasDeValor": {
-    "precio":  { "qBase": 3.2, "factorCostoVariable": 0.90, "factorPrecioReferencia": 0.95 },
-    "rapidez": { "qBase": 3.6, "factorCostoVariable": 1.00, "factorPrecioReferencia": 1.00 },
-    "calidad": { "qBase": 4.0, "factorCostoVariable": 1.15, "factorPrecioReferencia": 1.10 }
+    "_nota": "Escenario S7 del experimento de propuestas (balance/experimento-propuestas.ts): brecha promedio 1,07",
+    "precio": {
+      "qBase": 3.4,
+      "factorCostoVariable": 0.9,
+      "factorPrecioReferencia": 0.95,
+      "factorFrecuencia": 1.2,
+      "_efecto": "Lo barato se compra más seguido: más volumen, menos margen"
+    },
+    "rapidez": {
+      "qBase": 3.6,
+      "factorCostoVariable": 1.0,
+      "factorPrecioReferencia": 1.0,
+      "umbralSaturacion": 0.98,
+      "factorCastigoSaturacion": 0.5,
+      "factorAbandonoMalServicio": 0.5,
+      "_efecto": "Absorbe los picos: tolera operar cerca del límite y pierde menos clientes por rechazos"
+    },
+    "calidad": {
+      "qBase": 3.8,
+      "factorCostoVariable": 1.15,
+      "factorPrecioReferencia": 1.1,
+      "factorCostoCapacidad": 1.1,
+      "_efecto": "Cobra más y gana reputación, pero insumos y personal cuestan más"
+    }
   },
   "marketing": {
     "_nota": "Eficiencia (η) por nivel; el costo diario de cada nivel lo define cada plantilla.",
-    "eficiencia": { "0": 0, "bajo": 1.0, "medio": 0.8, "alto": 0.6 }
+    "eficiencia": {
+      "0": 0,
+      "bajo": 1.0,
+      "medio": 0.8,
+      "alto": 0.6
+    }
   },
   "calificacion": {
     "lambda": 0.2,
@@ -23,15 +49,19 @@
     "umbralSaturacion": 0.9
   },
   "clientes": {
-    "a1MalServicio": 0.30,
+    "a1MalServicio": 0.3,
     "a2PrecioSobreReferencia": 0.05
   },
   "demanda": {
-    "ruidoMin": 0.90,
-    "ruidoMax": 1.10
+    "ruidoMin": 0.9,
+    "ruidoMax": 1.1
   },
   "clima": {
-    "probabilidad": { "soleado": 0.5, "nublado": 0.3, "lluvia": 0.2 }
+    "probabilidad": {
+      "soleado": 0.5,
+      "nublado": 0.3,
+      "lluvia": 0.2
+    }
   },
   "plan": {
     "precioMinFactor": 0.5,
