@@ -1,65 +1,62 @@
 // Experimento: costo por cliente nuevo (CAC) de una plantilla.
-// Para cada valor de CAC (y cada forma de valorar la cartera) corre todos los bots en todas
-// las combinaciones, deriva la meta del bot prudente y compara a los bots contra esa meta.
+// Aísla la decisión de marketing: todos los bots juegan igual (precio de referencia,
+// capacidad = demanda esperada × 1,05) y solo cambia el marketing. Así el resultado no se
+// mezcla con otras decisiones, como la holgura de capacidad.
 //
-// Uso: node balance/experimento-cac.ts [plantilla=arepas] [partidas=300]
+// Lo deseable: un óptimo intermedio (algo de marketing rinde más que nada, y el máximo rinde
+// menos que un nivel moderado) y ningún beneficio por comprar clientes al final de la temporada.
+//
+// Uso: node balance/experimento-cac.ts [plantilla=arepas] [partidas=200] [valores=3,4,5,6,8]
 
 import { readFileSync } from 'node:fs';
 import { resolverParametros, type DatosConfig, type DatosPlantilla } from '../motor/datos.ts';
 import { jugarTemporada } from '../motor/temporada.ts';
-import type { PropuestaValor } from '../motor/tipos.ts';
-import { BOTS } from '../bots/bots.ts';
+import type { NivelMarketing, PropuestaValor } from '../motor/tipos.ts';
+import { demandaEsperada, type FabricaBot } from '../bots/bots.ts';
 
 const PLANTILLA = process.argv[2] ?? 'arepas';
-const PARTIDAS = Number(process.argv[3] ?? 300);
-const VALORES_CAC = (process.argv[4] ?? "3,4,5,6,7,8,10").split(",").map(Number);
-const PROPORCION_META = 0.65;
+const PARTIDAS = Number(process.argv[3] ?? 200);
+const VALORES = (process.argv[4] ?? '3,4,5,6,8').split(',').map(Number);
 
 const leer = <T>(r: string): T => JSON.parse(readFileSync(new URL(r, import.meta.url), 'utf8')) as T;
-const configBase = leer<DatosConfig>('../datos/config.json');
-const plantillaBase = leer<DatosPlantilla>(`../datos/plantillas/${PLANTILLA}.json`);
+const config = leer<DatosConfig>('../datos/config.json');
+const base = leer<DatosPlantilla>(`../datos/plantillas/${PLANTILLA}.json`);
 const propuestas: PropuestaValor[] = ['precio', 'rapidez', 'calidad'];
 
-const percentil = (xs: number[], q: number): number => {
-  const s = [...xs].sort((a, b) => a - b);
-  return s[Math.min(s.length - 1, Math.max(0, Math.floor(q * (s.length - 1))))] ?? 0;
-};
-const pct = (x: number): string => `${Math.round(x * 100)}%`;
-const V = (c: number): string => Math.round(c / 100).toLocaleString('es-VE');
+const marketing = (nombre: string, nivel: (dia: number) => NivelMarketing): FabricaBot => () => ({
+  nombre,
+  decidir: (v) => ({ precio: v.parametros.precioReferencia, capacidad: Math.ceil(demandaEsperada(v) * 1.05), marketing: nivel(v.dia) }),
+});
+const ESTRATEGIAS: [string, FabricaBot][] = [
+  ['nada', marketing('nada', () => '0')],
+  ['bajo', marketing('bajo', () => 'bajo')],
+  ['medio', marketing('medio', () => 'medio')],
+  ['alto', marketing('alto', () => 'alto')],
+  ['medio → alto la última semana', marketing('compra-final', (d) => (d < 21 ? 'medio' : 'alto'))],
+  ['medio → nada las 2 últimas semanas', marketing('cosecha', (d) => (d < 14 ? 'medio' : '0'))],
+];
 
-for (const restaCapacidad of [false, true]) {
-  console.log(`\n### Cartera valorada con ${restaCapacidad ? 'margen completo (P* − c_v − c_k)' : 'margen actual (P* − c_v)'}\n`);
-  console.log('| CAC | Valor máx. de un cliente | Meta | Prudente | Agresivo | Cosechador | Barato | Avaro | Aleatorio | Agresivo/prudente (mediana) | Rango del prudente entre combinaciones |');
-  console.log('| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |');
-  for (const cac of VALORES_CAC) {
-    const config = structuredClone(configBase);
-    config.cartera.restarCostoCapacidad = restaCapacidad;
-    const pl = structuredClone(plantillaBase);
-    pl.marketing.costoPorClienteNuevo = cac;
+console.log(`## ${base.nombre}: patrimonio final promedio según el marketing (V)\n`);
+console.log(`Fórmula de la cartera: ${config.cartera.restarCostoCapacidad ? 'margen completo (P* − c_v − c_k)' : 'P* − c_v'}. ${PARTIDAS} partidas × 12 combinaciones por celda.\n`);
+console.log(`| CAC | ${ESTRATEGIAS.map(([n]) => n).join(' | ')} | Mejor nivel constante |`);
+console.log(`| --- | ${ESTRATEGIAS.map(() => '---').join(' | ')} | --- |`);
 
-    const porBot: Record<string, number[]> = {};
-    const prudentePorCombo: number[][] = [];
-    let valorMax = 0;
+for (const cac of VALORES) {
+  const pl = structuredClone(base);
+  pl.marketing.costoPorClienteNuevo = cac;
+  const promedios = ESTRATEGIAS.map(([, fabrica]) => {
+    let suma = 0, n = 0;
     for (const seg of pl.segmentos) {
       for (const prop of propuestas) {
         const p = resolverParametros(config, pl, seg.id, prop);
-        const costo = p.costoVariable + (p.carteraRestaCapacidad ? p.costoCapacidad : 0);
-        valorMax = Math.max(valorMax, p.frecuenciaCompra * (p.precioReferencia - costo) * p.diasValoracionCartera);
         for (const sab of [false, true]) {
-          for (const [nombre, fabrica] of Object.entries(BOTS)) {
-            const pats: number[] = [];
-            for (let i = 0; i < PARTIDAS; i++) pats.push(jugarTemporada(p, fabrica, `s${i}`, sab).patrimonioFinal);
-            (porBot[nombre] ??= []).push(...pats);
-            if (nombre === 'prudente') prudentePorCombo.push(pats);
-          }
+          for (let i = 0; i < PARTIDAS; i++) { suma += jugarTemporada(p, fabrica, `s${i}`, sab).patrimonioFinal; n++; }
         }
       }
     }
-    const meta = Math.round(percentil(porBot.prudente ?? [], 1 - PROPORCION_META) / 5000) * 5000;
-    const llega = (xs: number[]): number => xs.filter((x) => x >= meta).length / xs.length;
-    const tasasCombo = prudentePorCombo.map(llega);
-    const mediana = (b: string): number => percentil(porBot[b] ?? [], 0.5);
-    const celdas = ['prudente', 'agresivo', 'cosechador', 'barato', 'avaro', 'aleatorio'].map((b) => pct(llega(porBot[b] ?? [])));
-    console.log(`| ${cac} V | ${V(valorMax)} V | ${V(meta)} V | ${celdas.join(' | ')} | ${(mediana('agresivo') / mediana('prudente')).toFixed(2)} | ${pct(Math.min(...tasasCombo))}–${pct(Math.max(...tasasCombo))} |`);
-  }
+    return suma / n / 100;
+  });
+  const constantes = promedios.slice(0, 4);
+  const mejor = ESTRATEGIAS[constantes.indexOf(Math.max(...constantes))]?.[0] ?? '';
+  console.log(`| ${cac} V | ${promedios.map((x) => Math.round(x).toLocaleString('es-VE')).join(' | ')} | ${mejor} |`);
 }
