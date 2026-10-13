@@ -108,10 +108,10 @@ export function simularDia(
   const abierto = estaAbierto(dia, estado.abreSabados);
   const clima = ctx.climas[dia] ?? 'soleado';
   let ev = estado.ev;
-  let renta = 0;
+  let costosFijos = 0;
   if (ds === DOMINGO) {
-    if (ev.rentasPrepagadas > 0) ev = { ...ev, rentasPrepagadas: ev.rentasPrepagadas - 1 };
-    else renta = p.rentaSemanal;
+    if (ev.fijosPrepagados > 0) ev = { ...ev, fijosPrepagados: ev.fijosPrepagados - 1 };
+    else costosFijos = p.costosFijosSemanales;
   }
 
   let demanda = 0, atendidos = 0, rechazados = 0;
@@ -213,7 +213,7 @@ export function simularDia(
     ingresosEventos += cierre.ingresoDiferido;
   }
 
-  const ganancia = ingresos - costoVariable - costoCapacidad - costoMarketing - renta;
+  const ganancia = ingresos - costoVariable - costoCapacidad - costoMarketing - costosFijos;
   const clientes = clientesMil + nuevosMil - perdidosMil;
   caja += ganancia;
   const quiebra = caja < 0;
@@ -234,7 +234,7 @@ export function simularDia(
     registro: {
       dia, diaSemana: ds, abierto, clima, plan,
       demanda, atendidos, rechazados,
-      ingresos, costoVariable, costoCapacidad, costoMarketing, renta, ganancia,
+      ingresos, costoVariable, costoCapacidad, costoMarketing, costosFijos, ganancia,
       clientesNuevos: nuevosMil, clientesPerdidos: perdidosMil, clientesFinal: clientes,
       calificacionFinal: calificacion, cajaFinal: caja,
       patrimonioFinal: patrimonio(p, nuevo),

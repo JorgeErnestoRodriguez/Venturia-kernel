@@ -49,13 +49,13 @@ test('el estado se guarda siempre en enteros', () => {
   }
 });
 
-test('calendario: domingo cerrado y cobra la renta; sábado según la elección', () => {
+test('calendario: domingo cerrado y cobra los costos fijos; sábado según la elección', () => {
   const sin = jugarTemporada(p, BOTS.prudente!, 'cal', false).registros;
   const con = jugarTemporada(p, BOTS.prudente!, 'cal', true).registros;
   for (const regs of [sin, con]) {
     for (const r of regs.filter((x) => x.diaSemana === 6)) {
       assert.equal(r.abierto, false);
-      assert.equal(r.renta, p.rentaSemanal);
+      assert.equal(r.costosFijos, p.costosFijosSemanales);
       assert.equal(r.ingresos, 0);
     }
   }
@@ -104,4 +104,12 @@ test('la temporada termina en la quiebra', () => {
   const r = jugarTemporada(p, () => ruina, 'q', false);
   assert.equal(r.quebrada, true);
   assert.equal(r.registros.length, (r.diaQuiebra ?? -1) + 1);
+});
+
+test('el desglose de costos fijos suma el total de cada plantilla', () => {
+  for (const pl of [arepas, tutorias]) {
+    const d = pl.costos.desgloseCostosFijos ?? [];
+    assert.ok(d.length > 0, `${pl.id} sin desglose`);
+    assert.equal(d.reduce((a, x) => a + x.monto, 0), pl.costos.costosFijosSemanales);
+  }
 });

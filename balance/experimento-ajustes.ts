@@ -5,7 +5,7 @@
 //   v1: con imprevistos y oportunidades (datos/eventos.json); admite rutas eventos.<ruta>
 //   escenario: ajustes separados por espacios, cada uno ruta=valor. Rutas:
 //     config.<ruta>                          p. ej. config.propuestasDeValor.calidad.qBase=3.7
-//     <plantilla>.<ruta>                     p. ej. arepas.costos.rentaSemanal=220
+//     <plantilla>.<ruta>                     p. ej. arepas.costos.costosFijosSemanales=220
 //     <plantilla>.seg.<segmento>.<campo>     p. ej. arepas.seg.oficinistas.clientesIniciales=60
 //   Un escenario vacío ("") es la configuración actual.
 

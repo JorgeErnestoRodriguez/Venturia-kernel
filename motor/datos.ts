@@ -54,7 +54,11 @@ export interface DatosPlantilla {
   version: string;
   nombre: string;
   inicio: { capital: number; clientes?: number };
-  costos: { rentaSemanal: number };
+  costos: {
+    costosFijosSemanales: number;
+    /** Desglose informativo de los costos fijos (debe sumar costosFijosSemanales). */
+    desgloseCostosFijos?: { concepto: string; monto: number }[];
+  };
   segmentos: DatosSegmento[];
   marketing: { costoDiario: MapaNiveles; costoPorClienteNuevo: number };
   clientes: { tasaRecomendacion: number; abandonoBase: number };
@@ -95,7 +99,7 @@ export function resolverParametros(
     precioReferencia: aCentimos(seg.precioReferencia * pv.factorPrecioReferencia),
     costoVariable: aCentimos(seg.costoVariablePorPedido * pv.factorCostoVariable),
     costoCapacidad: aCentimos(seg.costoCapacidadPorUnidad * (pv.factorCostoCapacidad ?? 1)),
-    rentaSemanal: aCentimos(plantilla.costos.rentaSemanal),
+    costosFijosSemanales: aCentimos(plantilla.costos.costosFijosSemanales),
 
     mercadoPotencial: seg.mercadoPotencial,
     sensibilidadPrecio: seg.sensibilidadPrecio,

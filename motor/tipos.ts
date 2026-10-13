@@ -24,7 +24,7 @@ export interface Parametros {
   precioReferencia: number;        // céntimos (ya ajustado por la propuesta)
   costoVariable: number;           // céntimos por pedido (ya ajustado por la propuesta)
   costoCapacidad: number;          // céntimos por unidad de capacidad por día abierto
-  rentaSemanal: number;            // céntimos
+  costosFijosSemanales: number;    // céntimos; se cobran el domingo (alquiler, servicios, permisos…)
 
   mercadoPotencial: number;        // clientes
   sensibilidadPrecio: number;      // exponente e
@@ -78,7 +78,7 @@ export type Efecto =
   | { tipo: 'pedido'; fraccionDemanda?: number; unidades?: number; dias: number; desde: number; penalizacion: number; cancelaAlFallar?: boolean }
   | { tipo: 'ingresoDiferido'; gd: number; enDias: number; segunClima?: boolean }
   | { tipo: 'prepagoInsumos'; dias: number; descuento: number }
-  | { tipo: 'prepagoRenta'; semanas: number; descuento: number }
+  | { tipo: 'prepagoFijos'; semanas: number; descuento: number }
   | { tipo: 'resena'; umbral: number; malo: number; bueno: number; dias: number }
   | { tipo: 'revelar'; dato: string };
 
@@ -138,7 +138,7 @@ export interface EstadoEventos {
   compromisos: Compromiso[];
   diferidos: { diaVenta: number; monto: number; segunClima: boolean }[];
   insumosPrepagados: { unidades: number; hasta: number };
-  rentasPrepagadas: number;        // domingos que ya están pagados
+  fijosPrepagados: number;         // domingos cuyos costos fijos ya están pagados
   pendiente: string | null;        // imprevisto que el jugador verá en su próximo día abierto
   ultimoPorId: Record<string, number>;   // último día de venta en que apareció cada imprevisto
   imprevistos: number;             // aparecidos en la temporada
@@ -184,7 +184,7 @@ export interface RegistroDia {
   costoVariable: number;
   costoCapacidad: number;
   costoMarketing: number;
-  renta: number;
+  costosFijos: number;             // céntimos; solo el domingo
   ganancia: number;
   clientesNuevos: number;          // milésimas
   clientesPerdidos: number;        // milésimas

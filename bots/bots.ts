@@ -74,7 +74,7 @@ export function valorEstimado(v: Vista, efectos: readonly Efecto[], holgura: num
       }
       case 'ingresoDiferido': if (e.enDias < diasVenta) val += montoGd(p, e.gd) * (e.segunClima ? 0.97 : 1); break;
       case 'prepagoInsumos': val += ev.ultimaDemanda * e.dias * cv * e.descuento * 0.8; break;
-      case 'prepagoRenta': val += (e.semanas <= domingos ? 1 : -1) * e.semanas * p.rentaSemanal * e.descuento; break;
+      case 'prepagoFijos': val += (e.semanas <= domingos ? 1 : -1) * e.semanas * p.costosFijosSemanales * e.descuento; break;
       case 'resena':
         val += (v.estado.calificacion / 100 < e.umbral ? e.malo * 5 : e.bueno * e.dias) / 3 * D * margen;
         break;
@@ -93,7 +93,7 @@ function crearBot(e0: Estilo, semilla: string): Bot {
       const p = v.parametros;
       let ev: EstadoEventos = v.estado.ev;
       let caja = v.estado.caja;
-      const colchon = p.rentaSemanal;
+      const colchon = p.costosFijosSemanales;
       const acciones: Decision['acciones'] = {};
       let efectosHoy: Efecto[] = [];
 

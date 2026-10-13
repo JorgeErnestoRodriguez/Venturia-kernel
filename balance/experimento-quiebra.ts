@@ -1,11 +1,11 @@
 // Experimento: valle de arranque y quiebra.
-// Para cada configuración (capital × renta × escala de clientes iniciales) mide, por bot,
+// Para cada configuración (capital × costos fijos × escala de clientes iniciales) mide, por bot,
 // en todas las combinaciones de la plantilla (segmento × propuesta × sábados):
 //   - quiebra: % de partidas que terminan con caja negativa
 //   - pierde: % de partidas que terminan con menos patrimonio del inicial
 // y, para el prudente, la semana en que la caja toca fondo (fin del valle).
 //
-// Uso: node balance/experimento-quiebra.ts <plantilla> [partidas=40] [capital=a,b] [renta=a,b] [clientes=f1,f2]
+// Uso: node balance/experimento-quiebra.ts <plantilla> [partidas=40] [capital=a,b] [fijos=a,b] [clientes=f1,f2]
 //   clientes: factor sobre los clientes iniciales de cada segmento (conserva su proporción)
 
 import { readFileSync } from 'node:fs';
@@ -28,15 +28,15 @@ const med = (xs: number[]): number => { const s = [...xs].sort((a, b) => a - b);
 const bots = Object.keys(BOTS);
 
 console.log(`## ${base.nombre}: quiebra por bot (${N} partidas × 12 combinaciones)\n`);
-console.log(`| Capital | Renta | Clientes | ${bots.join(' | ')} | Prudente pierde | Prudente: fondo del valle | Prudente: patrimonio final / inicial |`);
+console.log(`| Capital | Costos fijos | Clientes | ${bots.join(' | ')} | Prudente pierde | Prudente: fondo del valle | Prudente: patrimonio final / inicial |`);
 console.log(`| --- | --- | --- | ${bots.map(() => '---').join(' | ')} | --- | --- | --- |`);
 
 for (const capital of lista('capital', base.inicio.capital))
-for (const renta of lista('renta', base.costos.rentaSemanal))
+for (const fijos of lista('fijos', base.costos.costosFijosSemanales))
 for (const fc of lista('clientes', 1)) {
   const pl: DatosPlantilla = structuredClone(base);
   pl.inicio.capital = capital;
-  pl.costos.rentaSemanal = renta;
+  pl.costos.costosFijosSemanales = fijos;
   for (const s of pl.segmentos) s.clientesIniciales = Math.round((s.clientesIniciales ?? pl.inicio.clientes ?? 0) * fc);
   const celdas: string[] = [];
   let pierdePrud = 0, fondos: number[] = [], ratios: number[] = [];
@@ -60,5 +60,5 @@ for (const fc of lista('clientes', 1)) {
     celdas.push(pct(quiebras / total));
     if (nombre === 'prudente') pierdePrud = pierde / total;
   }
-  console.log(`| ${capital} | ${renta} | ×${fc} | ${celdas.join(' | ')} | ${pct(pierdePrud)} | semana ${med(fondos)} | ${med(ratios).toFixed(2)} |`);
+  console.log(`| ${capital} | ${fijos} | ×${fc} | ${celdas.join(' | ')} | ${pct(pierdePrud)} | semana ${med(fondos)} | ${med(ratios).toFixed(2)} |`);
 }
