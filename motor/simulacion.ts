@@ -108,7 +108,9 @@ export function simularDia(
     rechazados = demanda - atendidos;
     ingresos = atendidos * plan.precio;
     costoVariable = atendidos * p.costoVariable;
-    costoCapacidad = plan.capacidad * p.costoCapacidad;
+    costoCapacidad = ds === SABADO
+      ? redondear(plan.capacidad * p.costoCapacidad * p.factorCapacidadSabado)
+      : plan.capacidad * p.costoCapacidad;
     costoMarketing = p.costoMarketing[plan.marketing];
 
     // Clientes

@@ -51,6 +51,7 @@ export interface Parametros {
   probClima: Record<Clima, number>;
   factorClima: Record<Clima, number>;
   factorSabado: number;
+  factorCapacidadSabado: number;  // multiplicador del costo de capacidad los sábados
 
   precioMinFactor: number;
   precioMaxFactor: number;

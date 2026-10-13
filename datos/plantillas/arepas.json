@@ -1,6 +1,6 @@
 {
   "id": "arepas",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "nombre": "Venta de arepas",
   "producto": {
     "singular": "arepa",
@@ -10,8 +10,8 @@
   "_fuentes": "Precios de referencia fijados por el diseñador (Jorge). Fuente secundaria: arepa de puesto 1–3 USD, Caracas 2025–2026.",
   "inicio": {
     "capital": 750,
-    "clientes": 150,
-    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial"
+    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial",
+    "_clientes": "Los clientes iniciales se definen por segmento (experimento-segmentos: igualan el patrimonio esperado entre segmentos)."
   },
   "costos": {
     "rentaSemanal": 200,
@@ -21,6 +21,7 @@
     {
       "id": "estudiantes",
       "nombre": "Estudiantes",
+      "clientesIniciales": 150,
       "precioReferencia": 2.0,
       "mercadoPotencial": 3000,
       "sensibilidadPrecio": 1.8,
@@ -32,6 +33,7 @@
     {
       "id": "oficinistas",
       "nombre": "Oficinistas",
+      "clientesIniciales": 110,
       "precioReferencia": 4.0,
       "mercadoPotencial": 800,
       "sensibilidadPrecio": 1.0,
@@ -61,6 +63,8 @@
       "nublado": 0.95,
       "lluvia": 0.7
     },
-    "sabado": 1.3
+    "sabado": 1.3,
+    "costoCapacidadSabado": 1.5,
+    "_sabado": "Los sábados la capacidad cuesta ×1,5 (recargo de horas extra). Abrir conviene en arepas (+11%) y no en tutorías (−1%)."
   }
 }

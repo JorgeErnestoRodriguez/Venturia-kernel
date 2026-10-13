@@ -40,18 +40,25 @@ export interface DatosSegmento {
   frecuenciaCompra: number;
   costoVariablePorPedido: number;
   costoCapacidadPorUnidad: number;
+  /** Opcional: clientes iniciales propios del segmento (si no, los de la plantilla). */
+  clientesIniciales?: number;
 }
 
 export interface DatosPlantilla {
   id: string;
   version: string;
   nombre: string;
-  inicio: { capital: number; clientes: number };
+  inicio: { capital: number; clientes?: number };
   costos: { rentaSemanal: number };
   segmentos: DatosSegmento[];
   marketing: { costoDiario: MapaNiveles; costoPorClienteNuevo: number };
   clientes: { tasaRecomendacion: number; abandonoBase: number };
-  factores: { clima: Record<Clima, number>; sabado: number };
+  factores: {
+    clima: Record<Clima, number>;
+    sabado: number;
+    /** Opcional (por defecto 1): multiplicador del costo de capacidad los sábados (horas extra). */
+    costoCapacidadSabado?: number;
+  };
 }
 
 const aCentimos = (v: number): number => redondear(v * 100);
@@ -76,7 +83,7 @@ export function resolverParametros(
     version: `${config.version}+${plantilla.id}@${plantilla.version}`,
 
     capitalInicial: aCentimos(plantilla.inicio.capital),
-    clientesIniciales: redondear(plantilla.inicio.clientes * 1000),
+    clientesIniciales: redondear((seg.clientesIniciales ?? plantilla.inicio.clientes ?? 0) * 1000),
     califInicial: redondear(config.temporada.calificacionInicial * 100),
 
     precioReferencia: aCentimos(seg.precioReferencia * pv.factorPrecioReferencia),
@@ -109,6 +116,7 @@ export function resolverParametros(
     probClima: { ...config.clima.probabilidad },
     factorClima: { ...plantilla.factores.clima },
     factorSabado: plantilla.factores.sabado,
+    factorCapacidadSabado: plantilla.factores.costoCapacidadSabado ?? 1,
 
     precioMinFactor: config.plan.precioMinFactor,
     precioMaxFactor: config.plan.precioMaxFactor,
