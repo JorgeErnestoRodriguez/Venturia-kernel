@@ -10,6 +10,11 @@
           "quiebra": 0.0033333333333333335,
           "mediana": 846.97
         },
+        "oportunista": {
+          "llega": 0.6133333333333333,
+          "quiebra": 0.0033333333333333335,
+          "mediana": 846.97
+        },
         "aleatorio": {
           "llega": 0,
           "quiebra": 0.995,
@@ -49,6 +54,11 @@
       "porCombo": {
         "estudiantes · precio · sin sábados": {
           "prudente": {
+            "llega": 0.52,
+            "mediana": 806.98,
+            "quiebra": 0.006
+          },
+          "oportunista": {
             "llega": 0.52,
             "mediana": 806.98,
             "quiebra": 0.006
@@ -95,6 +105,11 @@
             "mediana": 962.39,
             "quiebra": 0.002
           },
+          "oportunista": {
+            "llega": 0.812,
+            "mediana": 962.39,
+            "quiebra": 0.002
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 180.22,
@@ -133,6 +148,11 @@
         },
         "estudiantes · rapidez · sin sábados": {
           "prudente": {
+            "llega": 0.32,
+            "mediana": 754.89,
+            "quiebra": 0.002
+          },
+          "oportunista": {
             "llega": 0.32,
             "mediana": 754.89,
             "quiebra": 0.002
@@ -179,6 +199,11 @@
             "mediana": 944.46,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.86,
+            "mediana": 944.46,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 229.37,
@@ -217,6 +242,11 @@
         },
         "estudiantes · calidad · sin sábados": {
           "prudente": {
+            "llega": 0.43,
+            "mediana": 773.99,
+            "quiebra": 0.006
+          },
+          "oportunista": {
             "llega": 0.43,
             "mediana": 773.99,
             "quiebra": 0.006
@@ -263,6 +293,11 @@
             "mediana": 929.94,
             "quiebra": 0.002
           },
+          "oportunista": {
+            "llega": 0.762,
+            "mediana": 929.94,
+            "quiebra": 0.002
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 168.07,
@@ -301,6 +336,11 @@
         },
         "oficinistas · precio · sin sábados": {
           "prudente": {
+            "llega": 0.47,
+            "mediana": 789.29,
+            "quiebra": 0.008
+          },
+          "oportunista": {
             "llega": 0.47,
             "mediana": 789.29,
             "quiebra": 0.008
@@ -347,6 +387,11 @@
             "mediana": 954.91,
             "quiebra": 0.002
           },
+          "oportunista": {
+            "llega": 0.814,
+            "mediana": 954.91,
+            "quiebra": 0.002
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 228.93,
@@ -385,6 +430,11 @@
         },
         "oficinistas · rapidez · sin sábados": {
           "prudente": {
+            "llega": 0.274,
+            "mediana": 741.3,
+            "quiebra": 0.004
+          },
+          "oportunista": {
             "llega": 0.274,
             "mediana": 741.3,
             "quiebra": 0.004
@@ -431,6 +481,11 @@
             "mediana": 939.68,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.868,
+            "mediana": 939.68,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 274.98,
@@ -473,6 +528,11 @@
             "mediana": 777.02,
             "quiebra": 0.006
           },
+          "oportunista": {
+            "llega": 0.434,
+            "mediana": 777.02,
+            "quiebra": 0.006
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 219.41,
@@ -511,6 +571,11 @@
         },
         "oficinistas · calidad · con sábados": {
           "prudente": {
+            "llega": 0.796,
+            "mediana": 940.54,
+            "quiebra": 0.002
+          },
+          "oportunista": {
             "llega": 0.796,
             "mediana": 940.54,
             "quiebra": 0.002
@@ -562,6 +627,11 @@
           "quiebra": 0,
           "mediana": 1052.65
         },
+        "oportunista": {
+          "llega": 0.5246666666666666,
+          "quiebra": 0,
+          "mediana": 1052.65
+        },
         "aleatorio": {
           "llega": 0,
           "quiebra": 0.8216666666666667,
@@ -601,6 +671,11 @@
       "porCombo": {
         "primaria · precio · sin sábados": {
           "prudente": {
+            "llega": 0.736,
+            "mediana": 1066.32,
+            "quiebra": 0
+          },
+          "oportunista": {
             "llega": 0.736,
             "mediana": 1066.32,
             "quiebra": 0
@@ -647,6 +722,11 @@
             "mediana": 1029.7,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.278,
+            "mediana": 1029.7,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 224.67,
@@ -685,6 +765,11 @@
         },
         "primaria · rapidez · sin sábados": {
           "prudente": {
+            "llega": 0.27,
+            "mediana": 1034.8,
+            "quiebra": 0
+          },
+          "oportunista": {
             "llega": 0.27,
             "mediana": 1034.8,
             "quiebra": 0
@@ -731,6 +816,11 @@
             "mediana": 1057.88,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.606,
+            "mediana": 1057.88,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 267.27,
@@ -769,6 +859,11 @@
         },
         "primaria · calidad · sin sábados": {
           "prudente": {
+            "llega": 0.876,
+            "mediana": 1086.92,
+            "quiebra": 0
+          },
+          "oportunista": {
             "llega": 0.876,
             "mediana": 1086.92,
             "quiebra": 0
@@ -815,6 +910,11 @@
             "mediana": 1062.04,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.638,
+            "mediana": 1062.04,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 220.84,
@@ -853,6 +953,11 @@
         },
         "preuniversitario · precio · sin sábados": {
           "prudente": {
+            "llega": 0.654,
+            "mediana": 1059.94,
+            "quiebra": 0
+          },
+          "oportunista": {
             "llega": 0.654,
             "mediana": 1059.94,
             "quiebra": 0
@@ -899,6 +1004,11 @@
             "mediana": 1035.44,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.334,
+            "mediana": 1035.44,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 265.74,
@@ -937,6 +1047,11 @@
         },
         "preuniversitario · rapidez · sin sábados": {
           "prudente": {
+            "llega": 0.044,
+            "mediana": 1017.64,
+            "quiebra": 0
+          },
+          "oportunista": {
             "llega": 0.044,
             "mediana": 1017.64,
             "quiebra": 0
@@ -983,6 +1098,11 @@
             "mediana": 1028.03,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.232,
+            "mediana": 1028.03,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 315.5,
@@ -1025,6 +1145,11 @@
             "mediana": 1092.46,
             "quiebra": 0
           },
+          "oportunista": {
+            "llega": 0.92,
+            "mediana": 1092.46,
+            "quiebra": 0
+          },
           "aleatorio": {
             "llega": 0,
             "mediana": 304.61,
@@ -1063,6 +1188,11 @@
         },
         "preuniversitario · calidad · con sábados": {
           "prudente": {
+            "llega": 0.708,
+            "mediana": 1081.36,
+            "quiebra": 0
+          },
+          "oportunista": {
             "llega": 0.708,
             "mediana": 1081.36,
             "quiebra": 0
