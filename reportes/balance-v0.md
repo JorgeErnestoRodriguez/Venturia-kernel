@@ -12,31 +12,32 @@ Alcance v0: economía base, sin imprevistos ni oportunidades; la temporada termi
 
 | Bot | Llega a la meta | Quiebra | Patrimonio mediano | P10 | P90 |
 | --- | --- | --- | --- | --- | --- |
-| prudente | 61% | 0% | 847 | 647 | 1.071 |
-| aleatorio | 0% | 100% | 221 | 111 | 312 |
-| agresivo | 36% | 58% | 623 | 455 | 1.013 |
-| holgado | 59% | 0% | 830 | 678 | 1.028 |
-| ajustado | 4% | 14% | 561 | 374 | 739 |
-| avaro | 0% | 3% | 286 | 173 | 388 |
-| barato | 12% | 40% | 593 | 411 | 820 |
-| cosechador | 50% | 0% | 799 | 616 | 998 |
+| prudente | 61% | 0% | 847 | 644 | 1.071 |
+| oportunista | 61% | 0% | 847 | 644 | 1.071 |
+| aleatorio | 0% | 99% | 217 | 107 | 311 |
+| agresivo | 36% | 56% | 619 | 452 | 1.013 |
+| holgado | 56% | 0% | 824 | 691 | 1.024 |
+| ajustado | 5% | 14% | 558 | 364 | 754 |
+| avaro | 0% | 3% | 288 | 170 | 392 |
+| barato | 12% | 39% | 592 | 406 | 822 |
+| cosechador | 50% | 0% | 800 | 614 | 1.002 |
 
 ### Llega a la meta, por combinación y bot
 
-| Combinación | prudente | aleatorio | agresivo | holgado | ajustado | avaro | barato | cosechador | Mejor bot |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| estudiantes · precio · sin sábados | 52% | 0% | 25% | 49% | 2% | 0% | 19% | 46% | prudente |
-| estudiantes · precio · con sábados | 81% | 0% | 49% | 98% | 4% | 0% | 35% | 76% | holgado |
-| estudiantes · rapidez · sin sábados | 32% | 0% | 11% | 0% | 3% | 0% | 8% | 26% | prudente |
-| estudiantes · rapidez · con sábados | 86% | 0% | 49% | 88% | 17% | 0% | 43% | 84% | prudente |
-| estudiantes · calidad · sin sábados | 43% | 0% | 20% | 30% | 0% | 0% | 11% | 36% | prudente |
-| estudiantes · calidad · con sábados | 76% | 0% | 45% | 95% | 3% | 0% | 25% | 71% | holgado |
-| oficinistas · precio · sin sábados | 47% | 0% | 29% | 35% | 1% | 0% | 0% | 26% | prudente |
-| oficinistas · precio · con sábados | 81% | 0% | 54% | 97% | 3% | 0% | 3% | 64% | holgado |
-| oficinistas · rapidez · sin sábados | 27% | 0% | 16% | 0% | 1% | 0% | 0% | 11% | prudente |
-| oficinistas · rapidez · con sábados | 87% | 0% | 54% | 88% | 14% | 0% | 1% | 69% | prudente |
-| oficinistas · calidad · sin sábados | 43% | 0% | 26% | 26% | 0% | 0% | 0% | 23% | prudente |
-| oficinistas · calidad · con sábados | 80% | 0% | 53% | 96% | 2% | 0% | 2% | 64% | holgado |
+| Combinación | prudente | oportunista | aleatorio | agresivo | holgado | ajustado | avaro | barato | cosechador | Mejor bot |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| estudiantes · precio · sin sábados | 42% | 42% | 0% | 20% | 30% | 1% | 0% | 13% | 39% | prudente |
+| estudiantes · precio · con sábados | 76% | 76% | 0% | 44% | 96% | 3% | 0% | 28% | 71% | holgado |
+| estudiantes · rapidez · sin sábados | 44% | 44% | 0% | 18% | 3% | 3% | 0% | 14% | 38% | prudente |
+| estudiantes · rapidez · con sábados | 89% | 89% | 0% | 58% | 95% | 25% | 0% | 52% | 88% | prudente |
+| estudiantes · calidad · sin sábados | 43% | 43% | 0% | 20% | 30% | 0% | 0% | 11% | 36% | prudente |
+| estudiantes · calidad · con sábados | 76% | 76% | 0% | 45% | 95% | 3% | 0% | 25% | 71% | holgado |
+| oficinistas · precio · sin sábados | 38% | 38% | 0% | 22% | 16% | 0% | 0% | 0% | 20% | prudente |
+| oficinistas · precio · con sábados | 77% | 77% | 0% | 47% | 94% | 2% | 0% | 2% | 58% | holgado |
+| oficinistas · rapidez · sin sábados | 37% | 37% | 0% | 21% | 0% | 2% | 0% | 0% | 16% | prudente |
+| oficinistas · rapidez · con sábados | 90% | 90% | 0% | 63% | 95% | 21% | 0% | 2% | 76% | prudente |
+| oficinistas · calidad · sin sábados | 43% | 43% | 0% | 26% | 26% | 0% | 0% | 0% | 23% | prudente |
+| oficinistas · calidad · con sábados | 80% | 80% | 0% | 53% | 96% | 2% | 0% | 2% | 64% | holgado |
 
 ### Alertas
 
@@ -50,35 +51,36 @@ Alcance v0: economía base, sin imprevistos ni oportunidades; la temporada termi
 
 | Bot | Llega a la meta | Quiebra | Patrimonio mediano | P10 | P90 |
 | --- | --- | --- | --- | --- | --- |
-| prudente | 52% | 0% | 1.053 | 1.001 | 1.104 |
-| aleatorio | 0% | 82% | 267 | 181 | 389 |
-| agresivo | 52% | 0% | 1.057 | 902 | 1.203 |
-| holgado | 0% | 34% | 603 | 520 | 649 |
-| ajustado | 2% | 0% | 916 | 808 | 1.008 |
-| avaro | 0% | 0% | 577 | 461 | 782 |
-| barato | 0% | 82% | 489 | 407 | 543 |
-| cosechador | 0% | 0% | 902 | 823 | 989 |
+| prudente | 52% | 0% | 1.052 | 993 | 1.107 |
+| oportunista | 52% | 0% | 1.052 | 993 | 1.107 |
+| aleatorio | 0% | 81% | 263 | 176 | 391 |
+| agresivo | 49% | 0% | 1.045 | 903 | 1.207 |
+| holgado | 0% | 32% | 597 | 502 | 655 |
+| ajustado | 5% | 0% | 908 | 790 | 1.022 |
+| avaro | 0% | 0% | 571 | 457 | 788 |
+| barato | 0% | 79% | 474 | 398 | 550 |
+| cosechador | 0% | 0% | 904 | 820 | 988 |
 
 ### Llega a la meta, por combinación y bot
 
-| Combinación | prudente | aleatorio | agresivo | holgado | ajustado | avaro | barato | cosechador | Mejor bot |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| primaria · precio · sin sábados | 74% | 0% | 100% | 0% | 0% | 0% | 0% | 0% | agresivo |
-| primaria · precio · con sábados | 28% | 0% | 67% | 0% | 0% | 0% | 0% | 0% | agresivo |
-| primaria · rapidez · sin sábados | 27% | 0% | 100% | 0% | 0% | 0% | 0% | 0% | agresivo |
-| primaria · rapidez · con sábados | 61% | 0% | 95% | 0% | 0% | 0% | 0% | 0% | agresivo |
-| primaria · calidad · sin sábados | 88% | 0% | 100% | 0% | 0% | 0% | 0% | 0% | agresivo |
-| primaria · calidad · con sábados | 64% | 0% | 84% | 0% | 0% | 0% | 0% | 0% | agresivo |
-| preuniversitario · precio · sin sábados | 65% | 0% | 12% | 0% | 2% | 0% | 0% | 0% | prudente |
-| preuniversitario · precio · con sábados | 33% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
-| preuniversitario · rapidez · sin sábados | 4% | 0% | 0% | 0% | 14% | 0% | 0% | 0% | prudente |
-| preuniversitario · rapidez · con sábados | 23% | 0% | 0% | 0% | 8% | 0% | 0% | 0% | prudente |
-| preuniversitario · calidad · sin sábados | 92% | 0% | 62% | 0% | 2% | 0% | 0% | 0% | prudente |
-| preuniversitario · calidad · con sábados | 71% | 0% | 3% | 0% | 0% | 0% | 0% | 0% | prudente |
+| Combinación | prudente | oportunista | aleatorio | agresivo | holgado | ajustado | avaro | barato | cosechador | Mejor bot |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| primaria · precio · sin sábados | 32% | 32% | 0% | 97% | 0% | 0% | 0% | 0% | 0% | agresivo |
+| primaria · precio · con sábados | 7% | 7% | 0% | 37% | 0% | 0% | 0% | 0% | 0% | agresivo |
+| primaria · rapidez · sin sábados | 63% | 63% | 0% | 100% | 0% | 1% | 0% | 0% | 0% | agresivo |
+| primaria · rapidez · con sábados | 87% | 87% | 0% | 99% | 0% | 1% | 0% | 0% | 0% | agresivo |
+| primaria · calidad · sin sábados | 88% | 88% | 0% | 100% | 0% | 0% | 0% | 0% | 0% | agresivo |
+| primaria · calidad · con sábados | 64% | 64% | 0% | 84% | 0% | 0% | 0% | 0% | 0% | agresivo |
+| preuniversitario · precio · sin sábados | 17% | 17% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
+| preuniversitario · precio · con sábados | 12% | 12% | 0% | 0% | 0% | 0% | 0% | 0% | 0% | prudente |
+| preuniversitario · rapidez · sin sábados | 35% | 35% | 0% | 1% | 0% | 30% | 0% | 0% | 0% | prudente |
+| preuniversitario · rapidez · con sábados | 55% | 55% | 0% | 0% | 0% | 21% | 0% | 0% | 0% | prudente |
+| preuniversitario · calidad · sin sábados | 92% | 92% | 0% | 62% | 0% | 2% | 0% | 0% | 0% | prudente |
+| preuniversitario · calidad · con sábados | 71% | 71% | 0% | 3% | 0% | 0% | 0% | 0% | 0% | prudente |
 
 ### Alertas
 
 - Ninguna.
 
 ---
-Tiempo de ejecución: 1,3 s.
+Tiempo de ejecución: 4,5 s.

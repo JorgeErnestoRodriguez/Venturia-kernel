@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "0.5.0",
   "_nota": "Parámetros globales, comunes a todas las plantillas. Valores iniciales por calibrar.",
   "temporada": {
     "semanas": 4,
@@ -7,16 +7,16 @@
     "calificacionInicial": 3.0
   },
   "propuestasDeValor": {
-    "_nota": "S7 recalibrado para el valle de arranque (experimento-ajustes): calificación base 3,5 / 3,7 / 3,7 y capacidad de calidad ×1,12",
+    "_nota": "Calibrado con eventos v1 (experimento-ajustes v1): calificación base 3,65 / 3,8 / 3,7, frecuencia de precio ×1,15 y capacidad de calidad ×1,12. La reseña viral (I-03) se dispara relativa a la calificación base de cada propuesta.",
     "precio": {
-      "qBase": 3.5,
+      "qBase": 3.65,
       "factorCostoVariable": 0.9,
       "factorPrecioReferencia": 0.95,
-      "factorFrecuencia": 1.2,
+      "factorFrecuencia": 1.15,
       "_efecto": "Lo barato se compra más seguido: más volumen, menos margen"
     },
     "rapidez": {
-      "qBase": 3.7,
+      "qBase": 3.8,
       "factorCostoVariable": 1.0,
       "factorPrecioReferencia": 1.0,
       "umbralSaturacion": 0.98,

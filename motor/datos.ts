@@ -1,7 +1,7 @@
 // Conversión de los datos editables (JSON) a parámetros del motor.
 // El motor no lee archivos: recibe los objetos ya cargados (RNF-04).
 
-import type { Clima, NivelMarketing, Parametros, PropuestaValor } from './tipos.ts';
+import type { CatalogoEventos, Clima, NivelMarketing, Parametros, PropuestaValor } from './tipos.ts';
 import { redondear } from './matematica.ts';
 
 type MapaNiveles = Record<NivelMarketing, number>;
@@ -42,7 +42,12 @@ export interface DatosSegmento {
   costoCapacidadPorUnidad: number;
   /** Opcional: clientes iniciales propios del segmento (si no, los de la plantilla). */
   clientesIniciales?: number;
+  /** v1: ganancia diaria de referencia (G_d), en V. La calcula balance/calcular-gd.ts. */
+  gananciaDiariaReferencia?: number;
 }
+
+/** Catálogo de eventos tal como está en datos/eventos.json. */
+export type DatosEventos = CatalogoEventos & { version: string };
 
 export interface DatosPlantilla {
   id: string;
@@ -68,6 +73,7 @@ export function resolverParametros(
   plantilla: DatosPlantilla,
   segmentoId: string,
   propuesta: PropuestaValor,
+  eventos?: DatosEventos,
 ): Parametros {
   const seg = plantilla.segmentos.find((s) => s.id === segmentoId);
   if (!seg) throw new Error(`Segmento desconocido: ${plantilla.id}/${segmentoId}`);
@@ -123,5 +129,8 @@ export function resolverParametros(
     diasValoracionCartera: config.cartera.diasValoracion,
     carteraRestaCapacidad: config.cartera.restarCostoCapacidad ?? false,
     semanas: config.temporada.semanas,
+
+    ...(eventos ? { eventos } : {}),
+    gananciaDiaria: aCentimos(seg.gananciaDiariaReferencia ?? 0),
   };
 }

@@ -17,11 +17,13 @@
     "rentaSemanal": 200,
     "_nota": "Costo variable (c_v) y de capacidad (c_k) por segmento. La capacidad es ≈ 2/3 del costo por pedido para que la capacidad ociosa tenga un costo real (experimento-capacidad)."
   },
+  "_gananciaDiaria": "G_d: margen de contribución diario del prudente en la economía base (balance/calcular-gd.ts). Escala de los montos de imprevistos y oportunidades.",
   "segmentos": [
     {
       "id": "estudiantes",
       "nombre": "Estudiantes",
       "clientesIniciales": 90,
+      "gananciaDiariaReferencia": 55.8,
       "precioReferencia": 2.0,
       "mercadoPotencial": 3000,
       "sensibilidadPrecio": 1.8,
@@ -34,6 +36,7 @@
       "id": "oficinistas",
       "nombre": "Oficinistas",
       "clientesIniciales": 60,
+      "gananciaDiariaReferencia": 54.6,
       "precioReferencia": 4.0,
       "mercadoPotencial": 800,
       "sensibilidadPrecio": 1.0,

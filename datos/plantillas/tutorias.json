@@ -17,11 +17,13 @@
     "rentaSemanal": 120,
     "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
   },
+  "_gananciaDiaria": "G_d: margen de contribución diario del prudente en la economía base (balance/calcular-gd.ts). Escala de los montos de imprevistos y oportunidades.",
   "segmentos": [
     {
       "id": "primaria",
       "nombre": "Primaria (pagan los padres)",
       "clientesIniciales": 20,
+      "gananciaDiariaReferencia": 47.0,
       "precioReferencia": 8.0,
       "mercadoPotencial": 500,
       "sensibilidadPrecio": 1.2,
@@ -34,6 +36,7 @@
       "id": "preuniversitario",
       "nombre": "Preuniversitario",
       "clientesIniciales": 30,
+      "gananciaDiariaReferencia": 48.7,
       "precioReferencia": 12.0,
       "mercadoPotencial": 200,
       "sensibilidadPrecio": 0.8,
