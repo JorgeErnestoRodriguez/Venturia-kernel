@@ -26,8 +26,10 @@ Requiere Node.js 22.18 o superior (ejecuta TypeScript directamente).
 npm install          # solo instala TypeScript para verificar tipos
 npm test             # pruebas del motor (incluye determinismo)
 npm run typecheck    # verificación de tipos
-npm run balance      # simulador de balance → reportes/balance-v0.md y .json
+npm run balance      # simulador de balance v0 → reportes/balance-v0.md y .json
 node balance/ejecutar.ts 2000   # más partidas por combinación
+node balance/ejecutar.ts 500 v1 # v1: con imprevistos y oportunidades → reportes/balance-v1.md
+node balance/calcular-gd.ts     # G_d de cada segmento (escala de los eventos)
 ```
 
 ## Determinismo
@@ -40,4 +42,4 @@ El generador aleatorio (`motor/aleatorio.ts`) usa canales separados por semilla 
 ## Etapas
 
 - **v0:** economía base (demanda, ganancia, clientes, calificación, cartera, calendario, quiebra) y bots.
-- **v1:** imprevistos y oportunidades con plazo, con la verificación del tope del 20%.
+- **v1:** imprevistos y oportunidades con plazo (`datos/eventos.json`, `motor/eventos.ts`), con la verificación del tope del 20%. Sin catálogo de eventos, el motor reproduce la v0 exactamente.

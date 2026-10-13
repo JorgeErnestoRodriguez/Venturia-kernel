@@ -39,7 +39,7 @@ type PoliticaOportunidades = 'ninguna' | 'buenas' | 'azar';
 interface Estilo {
   nombre: string;
   precio: number;                          // factor sobre el precio de referencia vigente
-  holgura: number;                         // capacidad / demanda esperada
+  holgura: number | ((v: Vista) => number);   // capacidad / demanda esperada
   marketing: (v: Vista) => NivelMarketing;
   imprevistos?: PoliticaImprevistos;
   oportunidades?: PoliticaOportunidades;
@@ -84,11 +84,12 @@ export function valorEstimado(v: Vista, efectos: readonly Efecto[], holgura: num
   return val;
 }
 
-function crearBot(e: Estilo, semilla: string): Bot {
-  const r = crearAleatorio(semilla, `bot-${e.nombre}`);
+function crearBot(e0: Estilo, semilla: string): Bot {
+  const r = crearAleatorio(semilla, `bot-${e0.nombre}`);
   return {
-    nombre: e.nombre,
+    nombre: e0.nombre,
     decidir: (v): Decision => {
+      const e = { ...e0, holgura: typeof e0.holgura === 'function' ? e0.holgura(v) : e0.holgura };
       const p = v.parametros;
       let ev: EstadoEventos = v.estado.ev;
       let caja = v.estado.caja;
@@ -146,14 +147,18 @@ const fabrica = (e: Estilo): FabricaBot => (semilla) => crearBot(e, semilla);
 const fijo = (m: NivelMarketing) => (): NivelMarketing => m;
 const NIVELES: NivelMarketing[] = ['0', 'bajo', 'medio', 'alto'];
 
+/** Holgura óptima con eventos (v1): la capacidad barata de arepas conviene sobrarla para absorber
+ *  picos; en tutorías la capacidad es cara. Sin eventos (v0), 1,2 en ambas. */
+const holguraOptima = (v: Vista): number => (v.parametros.eventos && v.parametros.plantilla === 'arepas' ? 1.4 : 1.2);
+
 export const BOTS: Record<string, FabricaBot> = {
-  /** Precio de referencia, capacidad con 20% de holgura y marketing medio: los mejores niveles
-   *  constantes según experimento-capacidad y experimento-cac. Responde bien los imprevistos y no
+  /** Precio de referencia, holgura óptima de capacidad y marketing medio: los mejores niveles
+   *  constantes según experimento-capacidad y experimento-cac (holgura 1,4 en arepas con eventos). Responde bien los imprevistos y no
    *  acepta oportunidades (la meta debe ser alcanzable sin ellas). Define la meta. */
-  prudente: fabrica({ nombre: 'prudente', precio: 1.0, holgura: 1.2, marketing: fijo('medio'), imprevistos: 'mejor', oportunidades: 'ninguna' }),
+  prudente: fabrica({ nombre: 'prudente', precio: 1.0, holgura: holguraOptima, marketing: fijo('medio'), imprevistos: 'mejor', oportunidades: 'ninguna' }),
 
   /** Igual que el prudente, y además aprovecha las oportunidades. Mide el tope del 20%. */
-  oportunista: fabrica({ nombre: 'oportunista', precio: 1.0, holgura: 1.2, marketing: fijo('medio'), imprevistos: 'mejor', oportunidades: 'buenas' }),
+  oportunista: fabrica({ nombre: 'oportunista', precio: 1.0, holgura: holguraOptima, marketing: fijo('medio'), imprevistos: 'mejor', oportunidades: 'buenas' }),
 
   /** Decisiones al azar dentro de rangos razonables. Debe llegar poco a la meta. */
   aleatorio: (semilla) => {

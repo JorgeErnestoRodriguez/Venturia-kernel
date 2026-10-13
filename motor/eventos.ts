@@ -169,7 +169,7 @@ export function oportunidadesDelDia(p: Parametros, ctx: ContextoTemporada, dia: 
   for (let k = 0; k < cat.porDia; k++) {
     const x = sorteos[k] ?? 0;
     let elegida: Oportunidad | undefined;
-    if (k === 0 && cat.estrellaCadaSemanas > 0 && semana % cat.estrellaCadaSemanas === 0 && ctx.diaEstrella[semana] === ds) {
+    if (k === 0 && ctx.diaEstrella[semana] === ds) {
       elegida = propias.find((o) => o.tipo === 'estrella');
     } else {
       // Tipo según los pesos; dentro del tipo, uniforme. Se reutiliza el mismo sorteo escalado.
@@ -265,7 +265,7 @@ export function cerrarDia(
   return { ev, ingresoDiferido };
 }
 
-function disparado(imp: Imprevisto, ev: EstadoEventos, datos: { uso: number; rechazo: number; calificacion: number }): boolean {
+function disparado(p: Parametros, imp: Imprevisto, ev: EstadoEventos, datos: { uso: number; rechazo: number; calificacion: number }): boolean {
   const d = imp.disparo;
   switch (d.tipo) {
     case 'aleatorio': return false;
@@ -273,6 +273,7 @@ function disparado(imp: Imprevisto, ev: EstadoEventos, datos: { uso: number; rec
     case 'usoAltoEnVentana': return ev.ventanaUso.slice(-d.ventana).reduce((a, b) => a + b, 0) >= d.dias;
     case 'rechazos': return datos.rechazo > d.umbral;
     case 'calificacionMinima': return datos.calificacion >= d.valor;
+    case 'calificacionRelativa': return datos.calificacion >= p.qBase + d.margen - 1e-9;
     case 'calificacionMaxima': return datos.calificacion <= d.valor;
     case 'precioAltoSeguido': return ev.rachaPrecioAlto >= d.dias;
     case 'sinMarketingSeguido': return ev.rachaSinMarketing >= d.dias;
@@ -290,7 +291,7 @@ function elegirImprevisto(
     const u = ev.ultimoPorId[i.id];
     return i.aplica.includes(p.plantilla) && (u === undefined || hoy - u >= cat.diasSinRepetir);
   };
-  const cond = cat.catalogo.find((i) => i.disparo.tipo !== 'aleatorio' && libre(i) && disparado(i, ev, datos));
+  const cond = cat.catalogo.find((i) => i.disparo.tipo !== 'aleatorio' && libre(i) && disparado(p, i, ev, datos));
   if (cond) return cond.id;
   const [x, y] = ctx.sorteoImprevisto[dia] ?? [1, 0];
   if (x >= cat.probabilidadAleatorioPorDia) return null;

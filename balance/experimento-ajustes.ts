@@ -25,7 +25,7 @@ const mediana = (xs: number[]): number => { const s = [...xs].sort((a, b) => a -
 
 function asignar(obj: Record<string, unknown>, ruta: string[], valor: number): void {
   let o = obj;
-  for (const k of ruta.slice(0, -1)) o = o[k] as Record<string, unknown>;
+  for (const k of ruta.slice(0, -1)) o = (Array.isArray(o) ? (o as unknown[]).find((x) => (x as { id?: string }).id === k) : o[k]) as Record<string, unknown>;
   o[ruta.at(-1)!] = valor;
 }
 

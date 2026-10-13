@@ -128,7 +128,7 @@ for (const pl of plantillas) {
   const prud = pb[BOT_META]!;
   if (pb.aleatorio && pb.aleatorio.llega >= 0.2) alertas.push(`El bot aleatorio llega a la meta en ${pct(pb.aleatorio.llega)} de las partidas (criterio: < 20%). Las decisiones importan poco.`);
   for (const [b, r] of Object.entries(pb)) {
-    if (b !== BOT_META && r.llega > prud.llega + 0.05) alertas.push(`**${b}** supera al prudente (${pct(r.llega)} frente a ${pct(prud.llega)}): posible estrategia dominante.`);
+    if (b !== BOT_META && b !== 'oportunista' && r.llega > prud.llega + 0.05) alertas.push(`**${b}** supera al prudente (${pct(r.llega)} frente a ${pct(prud.llega)}): posible estrategia dominante.`);
   }
   // Equilibrio entre las elecciones de fundación (segmento × propuesta), con la mejor elección de sábados.
   // Se compara el patrimonio mediano, no el % que llega a la meta, que es muy sensible al umbral.

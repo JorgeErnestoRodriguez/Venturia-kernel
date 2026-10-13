@@ -88,6 +88,7 @@ export type Disparo =
   | { tipo: 'usoAltoEnVentana'; umbral: number; dias: number; ventana: number }
   | { tipo: 'rechazos'; umbral: number }
   | { tipo: 'calificacionMinima'; valor: number }
+  | { tipo: 'calificacionRelativa'; margen: number }   // calificación ≥ calificación base de la propuesta + margen
   | { tipo: 'calificacionMaxima'; valor: number }
   | { tipo: 'precioAltoSeguido'; factor: number; dias: number }
   | { tipo: 'sinMarketingSeguido'; dias: number };
@@ -105,7 +106,7 @@ export interface Oportunidad {
 export interface CatalogoEventos {
   rangos: { demanda: [number, number]; costoVariable: [number, number]; capacidad: [number, number]; calificacion: [number, number] };
   imprevistos: { probabilidadAleatorioPorDia: number; diasSinRepetir: number; catalogo: Imprevisto[] };
-  oportunidades: { porDia: number; pesos: Record<Exclude<TipoOportunidad, 'estrella'>, number>; estrellaCadaSemanas: number; climaIngresoDiferido: Record<Clima, number>; catalogo: Oportunidad[] };
+  oportunidades: { porDia: number; pesos: Record<Exclude<TipoOportunidad, 'estrella'>, number>; estrellasPorTemporada: number; climaIngresoDiferido: Record<Clima, number>; catalogo: Oportunidad[] };
 }
 
 /** Lo que el jugador decide además del plan, en un día abierto. */
@@ -209,5 +210,6 @@ export interface ContextoTemporada {
   /** v1: sorteos fijos por día de calendario, en [0, 1). */
   sorteoImprevisto: [number, number][];
   sorteoOportunidades: [number, number][];
-  diaEstrella: number[];           // por semana: día de la semana (0–4) en que aparece la estrella
+  diaEstrella: number[];           // por semana: día de la semana (0–4) en que aparece la estrella; −1 = esa semana no hay
+  franjaOportunidad: ('manana' | 'tarde')[];   // por día de calendario: media jornada en que aparece la oportunidad
 }

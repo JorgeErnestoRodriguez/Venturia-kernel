@@ -45,9 +45,16 @@ export function crearContexto(p: Parametros, semilla: string): ContextoTemporada
     sorteoImprevisto.push([rImp.siguiente(), rImp.siguiente()]);
     sorteoOportunidades.push([rOpo.siguiente(), rOpo.siguiente()]);
   }
+  // Estrellas: semanas distintas entre la 1 y la penúltima; en cada una, un día hábil al azar
+  const n = p.eventos?.oportunidades.estrellasPorTemporada ?? 0;
+  const candidatas = Array.from({ length: Math.max(1, p.semanas - 1) }, (_, i) => i);
+  const elegidas: number[] = [];
+  for (let k = 0; k < Math.min(n, candidatas.length); k++) elegidas.push(candidatas.splice(rEst.entero(candidatas.length), 1)[0]!);
   const diaEstrella: number[] = [];
-  for (let s = 0; s < p.semanas; s++) diaEstrella.push(rEst.entero(5));
-  return { semilla, climas, ruidos, sorteoImprevisto, sorteoOportunidades, diaEstrella };
+  for (let s = 0; s < p.semanas; s++) { const d = rEst.entero(5); diaEstrella.push(elegidas.includes(s) ? d : -1); }
+  const rFra = crearAleatorio(semilla, 'franja-oportunidad');
+  const franjaOportunidad = Array.from({ length: dias }, () => (rFra.siguiente() < 0.5 ? 'manana' as const : 'tarde' as const));
+  return { semilla, climas, ruidos, sorteoImprevisto, sorteoOportunidades, diaEstrella, franjaOportunidad };
 }
 
 export function estadoInicial(p: Parametros, abreSabados: boolean): Estado {
