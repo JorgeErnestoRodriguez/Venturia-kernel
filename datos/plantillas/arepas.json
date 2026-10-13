@@ -1,6 +1,6 @@
 {
   "id": "arepas",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "nombre": "Venta de arepas",
   "producto": {
     "singular": "arepa",
@@ -9,9 +9,9 @@
   },
   "_fuentes": "Precios de referencia fijados por el diseñador (Jorge). Fuente secundaria: arepa de puesto 1–3 USD, Caracas 2025–2026.",
   "inicio": {
-    "capital": 750,
-    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial",
-    "_clientes": "Los clientes iniciales se definen por segmento (experimento-segmentos: igualan el patrimonio esperado entre segmentos)."
+    "capital": 350,
+    "_capital": "Valle de arranque: con los clientes iniciales el negocio pierde dinero las primeras semanas; el capital alcanza si el jugador crece sin gastar de más (experimento-quiebra).",
+    "_clientes": "Por segmento: igualan el patrimonio esperado entre segmentos (experimento-segmentos) y arrancan por debajo del punto de equilibrio (experimento-quiebra)."
   },
   "costos": {
     "rentaSemanal": 200,
@@ -21,7 +21,7 @@
     {
       "id": "estudiantes",
       "nombre": "Estudiantes",
-      "clientesIniciales": 150,
+      "clientesIniciales": 90,
       "precioReferencia": 2.0,
       "mercadoPotencial": 3000,
       "sensibilidadPrecio": 1.8,
@@ -33,7 +33,7 @@
     {
       "id": "oficinistas",
       "nombre": "Oficinistas",
-      "clientesIniciales": 110,
+      "clientesIniciales": 60,
       "precioReferencia": 4.0,
       "mercadoPotencial": 800,
       "sensibilidadPrecio": 1.0,

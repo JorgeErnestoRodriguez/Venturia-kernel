@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0",
+  "version": "0.4.0",
   "_nota": "Parámetros globales, comunes a todas las plantillas. Valores iniciales por calibrar.",
   "temporada": {
     "semanas": 4,
@@ -7,16 +7,16 @@
     "calificacionInicial": 3.0
   },
   "propuestasDeValor": {
-    "_nota": "Escenario S7 del experimento de propuestas (balance/experimento-propuestas.ts): brecha promedio 1,07",
+    "_nota": "S7 recalibrado para el valle de arranque (experimento-ajustes): calificación base 3,5 / 3,7 / 3,7 y capacidad de calidad ×1,12",
     "precio": {
-      "qBase": 3.4,
+      "qBase": 3.5,
       "factorCostoVariable": 0.9,
       "factorPrecioReferencia": 0.95,
       "factorFrecuencia": 1.2,
       "_efecto": "Lo barato se compra más seguido: más volumen, menos margen"
     },
     "rapidez": {
-      "qBase": 3.6,
+      "qBase": 3.7,
       "factorCostoVariable": 1.0,
       "factorPrecioReferencia": 1.0,
       "umbralSaturacion": 0.98,
@@ -25,10 +25,10 @@
       "_efecto": "Absorbe los picos: tolera operar cerca del límite y pierde menos clientes por rechazos"
     },
     "calidad": {
-      "qBase": 3.8,
+      "qBase": 3.7,
       "factorCostoVariable": 1.15,
       "factorPrecioReferencia": 1.1,
-      "factorCostoCapacidad": 1.1,
+      "factorCostoCapacidad": 1.12,
       "_efecto": "Cobra más y gana reputación, pero insumos y personal cuestan más"
     }
   },

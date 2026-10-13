@@ -1,6 +1,6 @@
 {
   "id": "tutorias",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "nombre": "App de tutorías",
   "producto": {
     "singular": "sesión",
@@ -9,19 +9,19 @@
   },
   "_fuentes": "Precios de referencia fijados por el diseñador (Jorge).",
   "inicio": {
-    "capital": 900,
-    "_capital": "≈ 2 semanas de costos fijos (renta + capacidad + marketing bajo) con la demanda inicial",
-    "_clientes": "Los clientes iniciales se definen por segmento (experimento-segmentos: igualan el patrimonio esperado entre segmentos)."
+    "capital": 450,
+    "_capital": "Valle de arranque: con los clientes iniciales el negocio pierde dinero las primeras semanas; el capital alcanza si el jugador crece sin gastar de más (experimento-quiebra).",
+    "_clientes": "Por segmento: igualan el patrimonio esperado entre segmentos (experimento-segmentos) y arrancan por debajo del punto de equilibrio (experimento-quiebra)."
   },
   "costos": {
-    "rentaSemanal": 80,
+    "rentaSemanal": 120,
     "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
   },
   "segmentos": [
     {
       "id": "primaria",
       "nombre": "Primaria (pagan los padres)",
-      "clientesIniciales": 40,
+      "clientesIniciales": 20,
       "precioReferencia": 8.0,
       "mercadoPotencial": 500,
       "sensibilidadPrecio": 1.2,
@@ -33,7 +33,7 @@
     {
       "id": "preuniversitario",
       "nombre": "Preuniversitario",
-      "clientesIniciales": 55,
+      "clientesIniciales": 30,
       "precioReferencia": 12.0,
       "mercadoPotencial": 200,
       "sensibilidadPrecio": 0.8,
