@@ -14,7 +14,16 @@
     "_clientes": "Por segmento: igualan el patrimonio esperado entre segmentos (experimento-segmentos) y arrancan por debajo del punto de equilibrio (experimento-quiebra)."
   },
   "costos": {
-    "rentaSemanal": 200,
+    "costosFijosSemanales": 200,
+    "desgloseCostosFijos": [
+      { "concepto": "Alquiler del local", "monto": 120 },
+      { "concepto": "Servicios: electricidad, agua y aseo urbano", "monto": 25 },
+      { "concepto": "Punto de venta e internet", "monto": 15 },
+      { "concepto": "Permisos, tasas municipales y sanitarias", "monto": 15 },
+      { "concepto": "Contabilidad y declaraciones", "monto": 15 },
+      { "concepto": "Mantenimiento de equipos", "monto": 10 }
+    ],
+    "_costosFijos": "Lo que se paga cada domingo aunque no se venda nada. Montos de referencia en USD, por validar; el total se calibró por balance (valle de arranque).",
     "_nota": "Costo variable (c_v) y de capacidad (c_k) por segmento. La capacidad es ≈ 2/3 del costo por pedido para que la capacidad ociosa tenga un costo real (experimento-capacidad)."
   },
   "_gananciaDiaria": "G_d: margen de contribución diario del prudente en la economía base (balance/calcular-gd.ts). Escala de los montos de imprevistos y oportunidades.",

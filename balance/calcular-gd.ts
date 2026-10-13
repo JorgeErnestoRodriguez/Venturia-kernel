@@ -1,7 +1,7 @@
 // Calcula G_d, la ganancia diaria de referencia de cada segmento: el margen de contribución
 // (ingresos − costo variable − costo de capacidad) por día de venta del bot prudente en la economía base
 // (sin eventos), mediana entre partidas, promedio de las tres propuestas, sin abrir sábados.
-// No descuenta marketing ni renta: con el valle de arranque la ganancia neta es negativa al inicio
+// No descuenta marketing ni costos fijos: con el valle de arranque la ganancia neta es negativa al inicio
 // y no sirve como escala. El resultado va a gananciaDiariaReferencia de cada segmento.
 //
 // Uso: node balance/calcular-gd.ts [partidas=300]

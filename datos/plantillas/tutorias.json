@@ -14,7 +14,16 @@
     "_clientes": "Por segmento: igualan el patrimonio esperado entre segmentos (experimento-segmentos) y arrancan por debajo del punto de equilibrio (experimento-quiebra)."
   },
   "costos": {
-    "rentaSemanal": 120,
+    "costosFijosSemanales": 120,
+    "desgloseCostosFijos": [
+      { "concepto": "Coordinación y atención a representantes (medio tiempo)", "monto": 35 },
+      { "concepto": "Espacio de trabajo (coworking)", "monto": 40 },
+      { "concepto": "Contabilidad, registro y declaraciones", "monto": 15 },
+      { "concepto": "Plataforma de videollamadas (licencias)", "monto": 10 },
+      { "concepto": "Hosting, dominio y mantenimiento de la app", "monto": 10 },
+      { "concepto": "Internet y respaldo de datos móviles", "monto": 10 }
+    ],
+    "_costosFijos": "Lo que se paga cada domingo aunque no se venda nada. Montos de referencia en USD, por validar; el total se calibró por balance (valle de arranque).",
     "_nota": "Costo variable (c_v) y de capacidad (c_k) se definen por segmento"
   },
   "_gananciaDiaria": "G_d: margen de contribución diario del prudente en la economía base (balance/calcular-gd.ts). Escala de los montos de imprevistos y oportunidades.",

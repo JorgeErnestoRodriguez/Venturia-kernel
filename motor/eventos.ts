@@ -12,7 +12,7 @@ import type {
 export function estadoEventosInicial(): EstadoEventos {
   return {
     diasVenta: 0, efectos: [], compromisos: [], diferidos: [],
-    insumosPrepagados: { unidades: 0, hasta: 0 }, rentasPrepagadas: 0,
+    insumosPrepagados: { unidades: 0, hasta: 0 }, fijosPrepagados: 0,
     pendiente: null, ultimoPorId: {}, imprevistos: 0,
     rachaUsoAlto: 0, ventanaUso: [], rachaPrecioAlto: 0, rachaSinMarketing: 0, ultimaDemanda: 0,
     factorPrecioRef: 1000, factorCostoVar: 1000, factorMeta: 1000, ajustarPrecio: false,
@@ -60,7 +60,7 @@ export function costoCaja(p: Parametros, ev: EstadoEventos, efectos: readonly Ef
   for (const e of efectos) {
     if (e.tipo === 'caja' && e.gd < 0) c += montoGd(p, -e.gd);
     if (e.tipo === 'prepagoInsumos') c += prepagoInsumos(p, ev, e.dias, e.descuento).monto;
-    if (e.tipo === 'prepagoRenta') c += redondear(e.semanas * p.rentaSemanal * (1 - e.descuento));
+    if (e.tipo === 'prepagoFijos') c += redondear(e.semanas * p.costosFijosSemanales * (1 - e.descuento));
   }
   return c;
 }
@@ -140,9 +140,9 @@ export function aplicarEfectos(
         ev.insumosPrepagados = { unidades: ev.insumosPrepagados.unidades + unidades, hasta: hoy + e.dias };
         break;
       }
-      case 'prepagoRenta':
-        r.caja -= redondear(e.semanas * p.rentaSemanal * (1 - e.descuento));
-        ev.rentasPrepagadas += e.semanas;
+      case 'prepagoFijos':
+        r.caja -= redondear(e.semanas * p.costosFijosSemanales * (1 - e.descuento));
+        ev.fijosPrepagados += e.semanas;
         break;
       case 'resena':
         if ((calificacion + r.calificacion) / 100 < e.umbral) r.calificacion += redondear(e.malo * 100);
